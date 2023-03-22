@@ -75,15 +75,14 @@ export function volumeCubo(area: number): string {
     }
 }
 
-export function saudacaoHoraDia(num: number): number {
+export function saudacaoHoraDia(num: number): string {
     if (num >= 21601 && num <= 43200) {
-        console.log("Bom dia");
+        return "Bom dia";
     } else if (num >= 43201 && num <= 72000) {
-        console.log("Boa Tarde");
+        return "Boa Tarde";
     } else {
-        console.log("Boa noite");
+        return "Boa noite";
     }
-    return num;
 }
 
 export function saudacaoDoDia(segundos: number): string {
