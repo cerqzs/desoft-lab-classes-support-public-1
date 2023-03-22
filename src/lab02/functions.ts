@@ -56,23 +56,23 @@ export function calculoFuncaoMat(x: number): number {
     }
 }
 
-export function volumeCubo(area: number, aresta: number): number {
+export function volumeCubo(area: number): string {
     let volume: number;
+    let aresta:number;
     if (area > 0) {
-        aresta = Math.sqrt(area / 6);
+        aresta =Math.round (Math.sqrt(area / 6));
         volume = aresta ** 3;
     } else {
         volume = -1;
     }
     volume = volume / 1000;
     if (volume <= 1) {
-        console.log("Pequeno");
-    } else if (1 < volume || volume <= 2) {
-        console.log("médio");
+        return 'Pequeno';
+    } else if (1 < volume && volume <= 2) {
+        return "médio";
     } else {
-        console.log("Grande");
+       return "Grande";
     }
-    return volume;
 }
 
 export function saudacaoHoraDia(num: number): number {

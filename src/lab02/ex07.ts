@@ -1,4 +1,4 @@
 import { volumeCubo } from "./functions";
-let vol: number; 
-vol = volumeCubo(120, 30);
+let vol: string; 
+vol = volumeCubo(120);
 console.log(vol); 
