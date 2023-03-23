@@ -15,4 +15,4 @@ export function calcularDistanciaOperarios ( cabo1: number, cabo2:number, angulo
 
 let distanciaoperarios: number; 
 distanciaoperarios = calcularDistanciaOperarios (40, 60 , 0.5);
-console.log ("a distancia entre os operarios é de:"  +distanciaoperarios);
+//console.log ("a distancia entre os operarios é de:"  +distanciaoperarios);

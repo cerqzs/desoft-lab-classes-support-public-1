@@ -20,4 +20,4 @@ export function calcularAlturaEdificio ( sombraEdifico:number, alturaPessoa:numb
 
 let edificio:number; 
 edificio = calcularAlturaEdificio (40, 2, 3);
-console.log (" o tamanho do edifico é de: " +edificio)
+//console.log (" o tamanho do edifico é de: " +edificio)

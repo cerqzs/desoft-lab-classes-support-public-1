@@ -16,4 +16,4 @@ export function calcularAlturaPredio (tempo:number) :number {
 
 let predio: number;
 predio = calcularAlturaPredio (25);
-console.log (" a altura do prédio é de" +predio)
+//console.log (" a altura do prédio é de" +predio)

@@ -120,7 +120,7 @@ export function imprimeMensagemMultiplos(x: number, y: number): string {
 
 export function numeroDeTresDigitos(numero: number): string {
     if (numero < 100 || numero > 999) {
-        throw new Error("O numero deve ter 3 digitos");
+        throw new RangeError("O numero deve ter 3 digitos");
     }
     const centenas: number = Math.floor(numero / 100);
     const dezenas: number = Math.floor(numero / 10) % 10;

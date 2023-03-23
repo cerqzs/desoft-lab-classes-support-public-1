@@ -16,4 +16,4 @@ export function calcularX (valorX: number) :number {
 
 let valorExpressao:number; 
 valorExpressao = calcularX (2);
-console.log (" o valor da expressão é de" +valorExpressao)
+//console.log (" o valor da expressão é de" +valorExpressao)

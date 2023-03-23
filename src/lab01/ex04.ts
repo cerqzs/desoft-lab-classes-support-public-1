@@ -6,4 +6,4 @@ export function calcularPerimetroRetangulo (area:number , base:number) : number 
 
 let peri: number;
 peri = calcularPerimetroRetangulo (10 , 5);
-console.log ("o perímetro do retangulo é de" +peri)
+// console.log ("o perímetro do retangulo é de" +peri)

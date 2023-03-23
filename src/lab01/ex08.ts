@@ -15,4 +15,4 @@ export function calcularIntervaloTempo (intervaloT:number) : number {
 
 let trovoada: number; 
 trovoada = calcularIntervaloTempo (10);
-console.log ("a trovoada está a:"   +trovoada)
+//console.log ("a trovoada está a:"   +trovoada)

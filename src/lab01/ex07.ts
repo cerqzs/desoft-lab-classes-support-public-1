@@ -13,4 +13,4 @@ export function calcularMinutos (horas: number, minutos: number): number {
 
 let min: number; 
 min = calcularMinutos (5, 20);
-console.log (" Passaram," +min)
+//console.log (" Passaram," +min)

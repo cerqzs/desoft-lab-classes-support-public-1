@@ -24,4 +24,4 @@ export function calcularDistanciaZe ( distanciaM:number , intervaloTempoM:number
 
 let kmPercorridoZe: number; 
 kmPercorridoZe = calcularDistanciaZe (42300, 500, 92);
-console.log (" o zé percorreu:" +kmPercorridoZe);
+//console.log (" o zé percorreu:" +kmPercorridoZe);

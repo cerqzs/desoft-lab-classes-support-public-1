@@ -7,4 +7,4 @@ export function calcularLitros (pi:number, raio: number, altura: number, convers
 
 let z: number;
 z= calcularLitros (3.14, 2, 4, 1000);
-console.log ("O total de litros possível de armazenar é"  +z)
+// console.log ("O total de litros possível de armazenar é"  +z)

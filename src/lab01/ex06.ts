@@ -6,4 +6,4 @@ export function calcularTemperaturaFahrenheit ( celsius: number): number {
 
 let temp : number; 
 temp = calcularTemperaturaFahrenheit (10);
-console.log ("A temperatura em graus Fahrenheit é de" +temp)
+//console.log ("A temperatura em graus Fahrenheit é de" +temp)
