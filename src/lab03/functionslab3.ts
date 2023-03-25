@@ -75,7 +75,7 @@ export function cambioDiff(moeda: string, valor: number): number {
 
 export function descricaoProduto(codigo: number): string {
 
-    if (codigo ===1) {
+    if (codigo === 1) {
         return "Alimento não perecível";
     } else if (codigo >= 2 && codigo <= 4) {
         return "Alimento perecível";
@@ -92,23 +92,148 @@ export function descricaoProduto(codigo: number): string {
 
 //ex04
 
-export function classificacaoQualitativa(nota:number):string {
+export function classificacaoQualitativa(nota: number): string {
 
-    if(!Number.isInteger(nota)){
+    if (!Number.isInteger(nota)) {
         throw new Error("O valor da nota tem de ser um numero inteiro");
-    } else if(nota <0 || nota >20) {
+    } else if (nota < 0 || nota > 20) {
         throw RangeError("O valor da nota tem de ser entre 0 e 20")
-    }else if(nota >=0 && nota <=4) {
+    } else if (nota >= 0 && nota <= 4) {
         return "mau";
-    }else if(nota >=5 && nota <=9) {
+    } else if (nota >= 5 && nota <= 9) {
         return "mediocre";
-    }else if(nota >=10 && nota <=13){
+    } else if (nota >= 10 && nota <= 13) {
         return "suficiente";
-    }else if(nota >=14 && nota <=17) {
+    } else if (nota >= 14 && nota <= 17) {
         return "bom"
-    }else {
+    } else {
         return "muito bom";
     }
+}
+
+//ex05 
+
+export function retencaoSalarial(salario: number): number {
+
+    let salarioLiquido: number;
+
+    if (salario < 0) {
+        throw new RangeError("O salario tem de ser maior que 0");
+    } else if (salario <= 500) {
+        salarioLiquido = salario - (salario * 0.1);
+    } else if (salario > 500 && salario <= 1000) {
+        salarioLiquido = salario - (salario * 0.15);
+    } else {
+        salarioLiquido = salario - (salario * 0.2);
     }
 
-    //ex05 
+    return salarioLiquido;
+}
+
+//ex07 a)
+
+export function somaPares(numeros: number[]): number {
+
+    let soma: number = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            soma = soma + numeros[i];    // soma += numeros[i]
+        }
+    }
+    return soma;
+}
+
+//ex07 b)
+
+export function contaPares(numeros: number[]): number {
+
+    let contagem: number = 0;
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+
+//ex07 c)
+
+export function somaImpares(numeros: number[]): number {
+
+    let soma: number = 0;
+
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 != 0) {
+            soma += numeros[i]; // soma = soma + numeros[i]
+        }
+    }
+    return soma;
+}
+
+
+//ex07 d)
+
+export function contaImpares(numeros: number[]): number {
+
+    let contagem: number = 0;
+
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 != 0) {   // !n operador relacional diferente de
+            contagem++;
+        }
+    }
+    return contagem;
+}
+
+// ex07 e)
+
+export function somaMultiplos(multiplo: number, inicioIntervalo: number, fimIntervalo: number): number {
+
+    const min = Math.min(inicioIntervalo, fimIntervalo);
+    const max = Math.max(inicioIntervalo, fimIntervalo);                   //const [min, max] = [Math.min(inicioIntervalo, fimIntervalo), Math.max(inicioIntervalo,fimIntervalo)];  este metodo cria um array e ordena os valores pela respetiva ordem, e de seguida desestrutura o array em duas constantes distintas c/ o valor min e max. 
+
+    let soma: number = 0;
+
+    for (let i = min; i <= max; i++) {
+        if (i % multiplo === 0) {
+            soma += i;  // soma= soma+ i; 
+        }
+    }
+    return soma;
+}
+
+//ex07 f)
+
+export function produtoMultiplos(multiplo: number, intervalo: number[]): number {
+
+    let produto: number = 1;
+
+    for (let i = 0; i < intervalo.length; i++) {
+        if (intervalo[i] % multiplo === 0) {
+            produto *= intervalo[i];  // produto= produto+ i; 
+        }
+    }
+    return produto;
+}
+
+//ex07 g)
+
+export function mediaMultiplos(multiplo: number, inicioIntervalo: number, fimIntervalo: number): number {
+
+    const min = Math.min(inicioIntervalo, fimIntervalo);
+    const max = Math.max(inicioIntervalo, fimIntervalo);                   //const [min, max] = [Math.min(inicioIntervalo, fimIntervalo), Math.max(inicioIntervalo,fimIntervalo)];  este metodo cria um array e ordena os valores pela respetiva ordem, e de seguida desestrutura o array em duas constantes distintas c/ o valor min e max. 
+
+    let soma: number = 0;
+    let contagem: number = 0;
+    let media: number;
+
+
+    for (let i = min; i <= max; i++) {
+        if (i % multiplo === 0) {
+            soma = soma + i;
+            contagem++;
+        }
+    }
+    media = soma / contagem;
+    return media;
+}
