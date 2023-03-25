@@ -130,6 +130,39 @@ export function retencaoSalarial(salario: number): number {
     return salarioLiquido;
 }
 
+//ex06 a)
+
+export function multiplosDeTres(intervalo: number[]): number {
+
+    const multiplo: number = 3;
+    let contagem: number = 0;
+    for (let i = 0; i < intervalo.length; i++) {
+        if (intervalo[i] % multiplo === 0) {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+
+//ex06 B)
+
+export function multiplosNumeroInteiro(multiplo: number, intervalo: number[]): number {
+
+    let contagem: number = 0;
+
+    if (Number.isInteger(multiplo)) {
+        for (let i = 0; i < intervalo.length; i++) {
+            if (intervalo[i] % multiplo === 0) {
+                contagem++;} 
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro");
+    }
+    return contagem;
+}
+
+
+
 //ex07 a)
 
 export function somaPares(numeros: number[]): number {
@@ -227,13 +260,34 @@ export function mediaMultiplos(multiplo: number, inicioIntervalo: number, fimInt
     let contagem: number = 0;
     let media: number;
 
-
     for (let i = min; i <= max; i++) {
         if (i % multiplo === 0) {
-            soma = soma + i;
+            soma += i; // soma=soma +i
             contagem++;
         }
     }
     media = soma / contagem;
     return media;
 }
+
+// ex07H
+
+export function mediaMultiplosDoisValores(multiploX: number, multiploY: number, inicioIntervalo: number, fimIntervalo: number,): number {
+
+    const min = Math.min(inicioIntervalo, fimIntervalo);
+    const max = Math.max(inicioIntervalo, fimIntervalo);
+
+    let soma: number = 0;
+    let contagem: number = 0;
+    let media: number;
+
+    for (let i = min; i <= max; i++) {
+        if (i % multiploX === 0 || i % multiploY === 0) {
+            soma += i;  // soma =soma +i
+            contagem++;
+        }
+    }
+    media = soma / contagem;
+    return media;
+}
+
