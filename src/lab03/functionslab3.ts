@@ -644,3 +644,12 @@ export function contarArmstrong(inicioIntervalo: number, fimIntervalo: number): 
     }
     return contagem;
 }
+
+//ex 10 
+
+export function calculoVencimento (horasExtra:number, salario:number) : number {
+
+    let valorHorasExtra = salario *0.02;
+    let salarioMensal:number;
+     return salarioMensal= salario + (horasExtra * valorHorasExtra);
+}
