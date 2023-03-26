@@ -153,7 +153,8 @@ export function multiplosNumeroInteiro(multiplo: number, intervalo: number[]): n
     if (Number.isInteger(multiplo)) {
         for (let i = 0; i < intervalo.length; i++) {
             if (intervalo[i] % multiplo === 0) {
-                contagem++;} 
+                contagem++;
+            }
         }
     } else {
         throw new Error("O numero deve ser inteiro");
@@ -161,6 +162,57 @@ export function multiplosNumeroInteiro(multiplo: number, intervalo: number[]): n
     return contagem;
 }
 
+//ex 06C)
+
+export function multiplosTresCinco(intervalo: number[]): number {
+
+    const multiploTres: number = 3;
+    const multiploCinco: number = 5;
+    let contagem: number = 0;
+
+    for (let i = 0; i < intervalo.length; i++) {
+        if (intervalo[i] % multiploTres === 0 || intervalo[i] % multiploCinco === 0) {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+
+// ex06D)
+
+export function multiplosDoisNumInteiros(multiploX: number, multiploY: number, intervalo: number[]): number {
+
+    let contagem: number = 0;
+
+    if (Number.isInteger(multiploX,) && Number.isInteger(multiploY)) {
+        for (let i = 0; i < intervalo.length; i++) {
+            if (intervalo[i] % multiploX === 0 || intervalo[i] % multiploY === 0) {
+                contagem++;
+            }
+        }
+    } else {
+        throw new Error("Os dois numeros devem ser inteiros")
+    }
+    return contagem;
+}
+
+//ex06E)
+
+export function somaMultiplosDoisNumInteiros(multiploX: number, multiploY: number, intervalo: number[]): number {
+
+    let soma: number = 0;
+
+    if (Number.isInteger(multiploX,) && Number.isInteger(multiploY)) {
+        for (let i = 0; i < intervalo.length; i++) {
+            if (intervalo[i] % multiploX === 0 || intervalo[i] % multiploY === 0) {
+                soma += intervalo[i];
+            }
+        }
+    } else {
+        throw new Error("Os dois numeros devem ser inteiros")
+    }
+    return soma;
+}
 
 
 //ex07 a)
@@ -291,3 +343,250 @@ export function mediaMultiplosDoisValores(multiploX: number, multiploY: number, 
     return media;
 }
 
+//8A
+
+export function numeroAlgarismosNumInt(numero: number): number {
+
+    return numero.toString().length;
+}
+
+//8B
+
+export function contaAlgarismosPares(numero: number): number {
+
+    let contagem = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.
+                contagem++;
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    return contagem;
+}
+
+//exc 8C
+
+export function contaAlgarismosImpares(numero: number): number {
+
+    let contagem = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 != 0) {   // converte os caracteres em numeros inteiros.  // !n operador relacional diferente de
+                contagem++;
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    return contagem;
+
+}
+
+// ex08D 
+
+export function somaAlgarismosNumInt(numero: number): number {
+
+    let soma = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            soma += parseInt(algarismos[i])            // converte os caracteres em numeros inteiros.  
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    return soma;
+}
+
+// ex08E
+
+export function somaAlgarismosPares(numero: number): number {
+
+    let soma: number = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.  // 
+                soma += parseInt(algarismos[i]);
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    return soma;
+}
+
+//ex08F
+
+export function somaAlgarismosImpares(numero: number): number {
+
+    let soma: number = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 != 0) {   // converte os caracteres em numeros inteiros.  // 
+                soma += parseInt(algarismos[i]);
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    return soma;
+}
+
+//ex08G 
+
+export function mediaAlgarismosNumInt(numero: number): number {
+
+    let soma: number = 0;
+    let media: number;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            soma += parseInt(algarismos[i]);            // converte os caracteres em numeros inteiros.  // 
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    media = soma / algarismos.length;
+
+    return media;
+}
+
+//ex08H
+
+export function mediaAlgarismosPares(numero: number): number {
+
+    let soma: number = 0;
+    let contagem: number = 0;
+    let media: number = 0;
+
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.  // 
+                soma += parseInt(algarismos[i]);
+                contagem++;
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    media = soma / contagem;
+
+    return media;
+}
+
+//ex08I 
+
+export function mediaAlgarismosImpares(numero: number): number {
+
+    let soma: number = 0;
+    let contagem: number = 0;
+    let media: number = 0;
+    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
+
+    if (Number.isInteger(numero)) {
+        for (let i = 0; i < algarismos.length; i++) {
+            if (parseInt(algarismos[i]) % 2 != 0) {   // converte os caracteres em numeros inteiros.  // 
+                soma += parseInt(algarismos[i]);
+                contagem++;
+            }
+        }
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+    media = soma / contagem;
+
+    return media;
+}
+
+// ex08J
+
+export function numeroInteiroInvertido(numero: number): number {
+
+    let numeroInvertido: number;
+
+    if (Number.isInteger(numero)) {
+        numeroInvertido = parseInt(numero.toString().split('').reverse().join('')) * Math.sign(numero);   // converte para string | converte a string para um array | inverte a ordem dos items | devolve o inverso do numero para uma string ||multiplica o numero pelo sinal original para manter o valor do numero || converte a string em um numero
+        return numeroInvertido
+    } else {
+        throw new Error("O numero deve ser inteiro")
+    }
+}
+
+// ex09A
+
+
+export function verificarCapicua(numero: number): boolean {
+
+    let numeroInvertido: number;
+    numeroInvertido = parseInt(numero.toString().split('').reverse().join(''));
+    return numero === numeroInvertido;
+
+}
+
+/*export function verificarCapicua(valor: number): boolean {
+    if (valor < 0) {
+        return false;
+    }
+    let numero = valor;
+    let inverso: number = 0;
+
+    while (numero > 0) {  // The while loop is another type of loop that checks for a specified condition before beginning to execute the block of statements. The loop runs until the condition value is met
+        const ultimoDigito = numero % 10; // descobrir o ultimo digito da variavel  numero
+        inverso = inverso * 10 + ultimoDigito; // cada ciclo acrescenta um digito à variavel inverso, que será o numero inverso de valor
+        numero = Math.floor(numero / 10); // remove o ultimo digito da variavel numero e prepara o ciclo para a proxima interação 
+    }
+    return valor === inverso;
+} */
+
+//ex09B
+
+export function verificarArmStrong(numero: number): boolean {
+
+    let soma: number = 0;
+    let numeroOriginal: number = numero;
+
+    while (numeroOriginal > 0) {
+        const digito: number = numeroOriginal % 10; // descobrir o ultimo digito da variavel
+        soma += digito ** 3;                        // calculo da soma dos cubos
+        numeroOriginal = Math.floor(numeroOriginal / 10); // remove o ultimo digito da variavel numero e prepara o ciclo para a proxima interação
+    }
+    
+    return soma === numero;
+}
+
+
+//ex09C
+
+
+export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): boolean {
+
+    for (let num = inicioIntervalo; num <= fimIntervalo; num++) {
+        const intervaloString = num.toString();
+        const inversoIntervalo = intervaloString.split("").reverse().join("");
+        if (intervaloString === inversoIntervalo) {
+            return true
+        }
+    }
+    return false;
+}
