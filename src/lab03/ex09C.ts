@@ -1,6 +1,6 @@
 import { primeiraCapicua } from "./functionslab3";
 
-const inicioIntervalo:number =0;
+const inicioIntervalo:number =10;
 
 const fimIntervalo:number =15;
 

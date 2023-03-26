@@ -571,7 +571,7 @@ export function verificarArmStrong(numero: number): boolean {
         soma += digito ** 3;                        // calculo da soma dos cubos
         numeroOriginal = Math.floor(numeroOriginal / 10); // remove o ultimo digito da variavel numero e prepara o ciclo para a proxima interação
     }
-    
+
     return soma === numero;
 }
 
@@ -579,14 +579,72 @@ export function verificarArmStrong(numero: number): boolean {
 //ex09C
 
 
-export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): boolean {
+export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): string {
 
-    for (let num = inicioIntervalo; num <= fimIntervalo; num++) {
-        const intervaloString = num.toString();
+    for (let numero = inicioIntervalo; numero <= fimIntervalo; numero++) {
+        const intervaloString = numero.toString();
         const inversoIntervalo = intervaloString.split("").reverse().join("");
         if (intervaloString === inversoIntervalo) {
-            return true
+            return intervaloString;
         }
     }
-    return false;
+    throw new Error("nao existem capicuas no intervalo")
+
+}
+
+//ex09 D
+export function maiorCapicua(inicioIntervalo: number, fimIntervalo: number): number {
+
+    let capicuaMaior: number = 0;
+
+    for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
+        const numero = i.toString();
+        if (numero === numero.split('').reverse().join('')) {
+            if (i > capicuaMaior) {
+                capicuaMaior = i;
+            }
+        }
+    }
+    return capicuaMaior;
+}
+
+//ex09 E 
+
+export function contarCapicuas(inicioIntervalo: number, fimIntervalo: number): number {
+
+    let contagem: number = 0;
+
+    for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
+        const numero = i.toString();
+        if (numero === numero.split('').reverse().join('')) {
+            contagem++;
+        }
+    }
+    return contagem;
+}
+
+// ex09F
+
+export function retornarArmstrong(inicioIntervalo: number, fimIntervalo: number): number {
+
+    for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
+        if (verificarArmStrong(i)) {
+            return i;
+        }
+    }
+    throw new RangeError("Não existem numeros armstrong no intervalo");
+}
+
+//ex09G 
+
+export function contarArmstrong(inicioIntervalo: number, fimIntervalo: number): number {
+
+    let contagem: number = 0;
+
+    for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
+        if (verificarArmStrong(i)) {
+            contagem++;
+        }
+    }
+    return contagem;
 }
