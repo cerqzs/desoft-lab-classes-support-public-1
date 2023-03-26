@@ -579,18 +579,15 @@ export function verificarArmStrong(numero: number): boolean {
 //ex09C
 
 
-export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): string {
+export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): number {
 
     for (let numero = inicioIntervalo; numero <= fimIntervalo; numero++) {
-        const intervaloString = numero.toString();
-        const inversoIntervalo = intervaloString.split("").reverse().join("");
-        if (intervaloString === inversoIntervalo) {
-            return intervaloString;
+        if(verificarCapicua(numero)) {
+            return numero;
         }
+        }
+        throw new Error("nao existem capicuas no intervalo")
     }
-    throw new Error("nao existem capicuas no intervalo")
-
-}
 
 //ex09 D
 export function maiorCapicua(inicioIntervalo: number, fimIntervalo: number): number {
@@ -598,8 +595,7 @@ export function maiorCapicua(inicioIntervalo: number, fimIntervalo: number): num
     let capicuaMaior: number = 0;
 
     for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
-        const numero = i.toString();
-        if (numero === numero.split('').reverse().join('')) {
+        if (verificarCapicua(i)) {
             if (i > capicuaMaior) {
                 capicuaMaior = i;
             }
@@ -615,13 +611,13 @@ export function contarCapicuas(inicioIntervalo: number, fimIntervalo: number): n
     let contagem: number = 0;
 
     for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
-        const numero = i.toString();
-        if (numero === numero.split('').reverse().join('')) {
+        if (verificarCapicua(i)) {
             contagem++;
         }
     }
     return contagem;
 }
+
 
 // ex09F
 
