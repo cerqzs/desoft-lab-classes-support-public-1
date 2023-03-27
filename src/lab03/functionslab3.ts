@@ -37,7 +37,7 @@ export function cambio(moeda: string, valor: number): number {
 
 }
 
-/* ex02 funcao chatgpt 
+/* ex02 funcao 
  switch 
 
 export function cambioDiff(moeda: string, valor: number): number {
@@ -582,12 +582,12 @@ export function verificarArmStrong(numero: number): boolean {
 export function primeiraCapicua(inicioIntervalo: number, fimIntervalo: number): number {
 
     for (let numero = inicioIntervalo; numero <= fimIntervalo; numero++) {
-        if(verificarCapicua(numero)) {
+        if (verificarCapicua(numero)) {
             return numero;
         }
-        }
-        throw new Error("nao existem capicuas no intervalo")
     }
+    throw new Error("nao existem capicuas no intervalo")
+}
 
 //ex09 D
 export function maiorCapicua(inicioIntervalo: number, fimIntervalo: number): number {
@@ -647,9 +647,86 @@ export function contarArmstrong(inicioIntervalo: number, fimIntervalo: number): 
 
 //ex 10 
 
-export function calculoVencimento (horasExtra:number, salario:number) : number {
+export function calculoVencimento(horasExtra: number, salario: number): number {
 
-    let valorHorasExtra = salario *0.02;
-    let salarioMensal:number;
-     return salarioMensal= salario + (horasExtra * valorHorasExtra);
+    let valorHorasExtra = salario * 0.02;
+    let salarioMensal: number;
+    return salarioMensal = salario + (horasExtra * valorHorasExtra);
 }
+
+// ex 11 
+
+export function posicaoProdutoAcumulado(lista: number[], numero: number): number {
+
+    let posicao: number = 0;
+    let produtoAcumulado: number = 1;
+    let limite = numero;
+
+    for (let i = 0; i < lista.length; i++) {
+        produtoAcumulado *= lista[i];
+
+        if (produtoAcumulado > limite) {
+            return posicao;
+        }
+        posicao++;
+    }
+
+    return -1;
+}
+
+//ex 12
+
+export function classificacaoNumeros(numero: number): number {
+
+    let soma: number = 0;
+
+    for (let i = 0; i < numero; i++) {
+        if (numero % i === 0) {
+            soma += i;
+        }
+    }
+    if (soma === numero) {
+        return 0;
+    } else if (soma > numero) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+//ex 13 
+
+export function obterNumero(numero: number): number {
+    let contagem: number = 0;
+    let inicioIntervalo: number = 0;
+    let fimIntervalo: number = 10;
+    const limite: number = 1;
+    const limiteFim: number = 20;
+
+    if (numero < limite || numero > limiteFim) {
+        throw new RangeError(" O numero deve ser entre 1 e 20")
+    }
+    for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
+        for (let x = inicioIntervalo; i <= fimIntervalo; x++) {
+            if (numero === i + x) {
+                contagem++;
+            }
+        }
+    }
+    return contagem;
+}
+
+//ex 14 a)
+
+export function canicultura(pesoAnimalKg:number, racaoGramas:number ) : number {
+  
+    if(pesoAnimalKg <= 10 && racaoGramas === 100 || pesoAnimalKg >10 && pesoAnimalKg <=25 && racaoGramas === 250 || pesoAnimalKg <25 && pesoAnimalKg <=45 && racaoGramas === 300 || pesoAnimalKg > 45 && racaoGramas ===500 ) {
+        return 0;
+    } else if(pesoAnimalKg <= 10 && racaoGramas > 100 || pesoAnimalKg >10 && pesoAnimalKg <=25 && racaoGramas > 250 || pesoAnimalKg <25 && pesoAnimalKg <=45 && racaoGramas > 300 || pesoAnimalKg > 45 && racaoGramas > 500 ) {
+        return 1;
+    } else {
+        return -1;
+    }
+}
+
+//ex 14 b)
