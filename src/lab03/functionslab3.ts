@@ -718,11 +718,11 @@ export function obterNumero(numero: number): number {
 
 //ex 14 a)
 
-export function canicultura(pesoAnimalKg:number, racaoGramas:number ) : number {
-  
-    if(pesoAnimalKg <= 10 && racaoGramas === 100 || pesoAnimalKg >10 && pesoAnimalKg <=25 && racaoGramas === 250 || pesoAnimalKg <25 && pesoAnimalKg <=45 && racaoGramas === 300 || pesoAnimalKg > 45 && racaoGramas ===500 ) {
+export function canicultura(pesoAnimalKg: number, racaoGramas: number): number {
+
+    if (pesoAnimalKg <= 10 && racaoGramas === 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas === 250 || pesoAnimalKg < 25 && pesoAnimalKg <= 45 && racaoGramas === 300 || pesoAnimalKg > 45 && racaoGramas === 500) {
         return 0;
-    } else if(pesoAnimalKg <= 10 && racaoGramas > 100 || pesoAnimalKg >10 && pesoAnimalKg <=25 && racaoGramas > 250 || pesoAnimalKg <25 && pesoAnimalKg <=45 && racaoGramas > 300 || pesoAnimalKg > 45 && racaoGramas > 500 ) {
+    } else if (pesoAnimalKg <= 10 && racaoGramas > 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas > 250 || pesoAnimalKg < 25 && pesoAnimalKg <= 45 && racaoGramas > 300 || pesoAnimalKg > 45 && racaoGramas > 500) {
         return 1;
     } else {
         return -1;
@@ -730,3 +730,54 @@ export function canicultura(pesoAnimalKg:number, racaoGramas:number ) : number {
 }
 
 //ex 14 b)
+
+export function caniculturaB(pesos: number[], racoes: number[]): number[] {
+    const resultado: number[] = [];
+    for (let i = 0; i < pesos.length; i++) {
+        const peso = pesos[i];
+        const racao = racoes[i];
+        if (peso < 0) {
+            throw new Error("O peso do cão não pode ser negativo");
+        }
+        let racaoAdequada: number;
+        if (peso <= 10) {
+            racaoAdequada = 100;
+        } else if (peso > 10 && peso <= 25) {
+            racaoAdequada = 250;
+        } else if (peso > 25 && peso <= 45) {
+            racaoAdequada = 300;
+        } else {
+            racaoAdequada = 500;
+        }
+        if (racao === racaoAdequada) {
+            resultado.push(0);
+        } else if (racao > racaoAdequada) {
+            resultado.push(1);
+        } else {
+            resultado.push(-1);
+        }
+    }
+    return resultado;
+}
+
+// ex15
+
+export function checksumNumero(numero: string): boolean {
+
+    if (numero.length > 8) {
+        return false;
+    }
+
+    const algarismo = numero.split('').map(Number);
+    const ultimoAlgarismo = algarismo[algarismo.length - 1]; // length = 8 - ultimo digito é o 7 pq indice começa a contar no 0
+    algarismo.push(ultimoAlgarismo);  // adiciona o ultimo algarismo novamente ao numero, passamos a ter 9 digitos
+
+    let somaPonderada: number = 0;
+
+    for (let i = 0; i < algarismo.length; i++) {
+        somaPonderada += algarismo[i] * (algarismo.length - i); // primeira interação do loop multiplica o 1º algarismo por 9, e assim sucessivamente
+    }
+    return somaPonderada % 11 === 0;
+
+}
+
