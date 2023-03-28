@@ -767,17 +767,36 @@ export function checksumNumero(numero: string): boolean {
     if (numero.length > 8) {
         return false;
     }
-
-    const algarismo = numero.split('').map(Number);
-    const ultimoAlgarismo = algarismo[algarismo.length - 1]; // length = 8 - ultimo digito é o 7 pq indice começa a contar no 0
-    algarismo.push(ultimoAlgarismo);  // adiciona o ultimo algarismo novamente ao numero, passamos a ter 9 digitos
+    const num = numero.split('').map(Number);
+    const ultimoAlgarismo = num[num.length - 1]; // length = 8 - ultimo digito é o 7 pq indice começa a contar no 0
+    num.push(ultimoAlgarismo);  // adiciona o ultimo algarismo novamente ao numero, passamos a ter 9 digitos
 
     let somaPonderada: number = 0;
 
-    for (let i = 0; i < algarismo.length; i++) {
-        somaPonderada += algarismo[i] * (algarismo.length - i); // primeira interação do loop multiplica o 1º algarismo por 9, e assim sucessivamente
+    for (let i = 0; i < num.length; i++) {
+        somaPonderada += num[i] * (num.length - i); // primeira interação do loop multiplica o 1º algarismo por 9, e assim sucessivamente
     }
     return somaPonderada % 11 === 0;
+}
+
+//ex16 
+
+export function separacaoParesImpares(sequencia: number[]): number[] {
+
+    let numerosPares: number[] = [];
+    let numerosImpares: number[] = [];
+
+    for (let i = 0; i < sequencia.length; i++) {
+        if (sequencia[i] % 2 === 0) {
+            numerosPares.push(sequencia[i]);
+        } else {
+            numerosImpares.push(sequencia[i])
+        }
+    }
+    numerosPares.sort();
+    numerosImpares.sort();
+    return numerosImpares.concat(numerosPares);
 
 }
+
 
