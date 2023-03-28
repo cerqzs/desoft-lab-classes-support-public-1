@@ -23,7 +23,7 @@ export function analisarValor(nota1: number): boolean {
 
 export function distanciaEntrePontos(x1: number, x2: number, y1: number, y2: number): number {
     let distancia: number;
-    distancia = Math.round( Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2));
+    distancia = Math.round(Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2));
     return distancia;
 }
 
@@ -31,7 +31,7 @@ export function operadoresDivisao(numero: number): number {
     let digito1: number, digito2: number, digito3: number;
 
     if (numero < 100 || numero > 999) {
-        throw new RangeError ("Número não tem 3 dígitos");
+        throw new RangeError("Número não tem 3 dígitos");
         digito1 = -1;
     } else {
         digito3 = numero % 10;
@@ -58,9 +58,9 @@ export function calculoFuncaoMat(x: number): number {
 
 export function volumeCubo(area: number): string {
     let volume: number;
-    let aresta:number;
+    let aresta: number;
     if (area > 0) {
-        aresta =Math.round (Math.sqrt(area / 6));
+        aresta = Math.round(Math.sqrt(area / 6));
         volume = aresta ** 3;
     } else {
         volume = -1;
@@ -71,7 +71,7 @@ export function volumeCubo(area: number): string {
     } else if (1 < volume && volume <= 2) {
         return "médio";
     } else {
-       return "Grande";
+        return "Grande";
     }
 }
 
@@ -173,25 +173,16 @@ export function indicePoluicao(poluicao: number): string {
     }
 }
 
-export function calculoGastos(grama: number, arvores: number, arbustos: number): number {
 
-    const vGrama: number = 10;
-    const vArvores: number = 20;
-    const vArbustos: number = 15;
 
-    let cGrama: number = grama * vGrama;
-    let cArvores: number = arvores * vArvores;
-    let cArbustos: number = arbustos * vArbustos;
-
-    let custoTotal: number = cGrama + cArvores + cArbustos;
-    return custoTotal;
-}
-
-export function calculoTempo(grama: number, arvores: number, arbustos: number): number {
-
+export function calcularTempoECustoTotal(grama: number, arvores: number, arbustos: number): string {
     const sGrama: number = 300;
     const sArvores: number = 600;
     const sArbustos: number = 400;
+    const vGrama: number = 10;
+    const vArvores: number = 20;
+    const vArbustos: number = 15;
+    const cHora: number = 10;
     const hora: number = 3600;
 
     let tGrama: number = grama * sGrama;
@@ -199,9 +190,18 @@ export function calculoTempo(grama: number, arvores: number, arbustos: number): 
     let tArbustos: number = arbustos * sArbustos;
 
     let totalTempo: number = Math.round((tGrama + tArvores + tArbustos) / hora);
+    let custoTempo: number = cHora * totalTempo;
 
-    return totalTempo;
+    let cGrama: number = grama * vGrama;
+    let cArvores: number = arvores * vArvores;
+    let cArbustos: number = arbustos * vArbustos;
+
+    let custoTotal: number = cGrama + cArvores + cArbustos + custoTempo;
+
+    return `Tempo total necessário: ${totalTempo} horas e um total: ${custoTotal} €`;
 }
+
+
 
 export function estafeta(dia1: number, dia2: number, dia3: number, dia4: number, dia5: number): number {
 
@@ -291,7 +291,7 @@ export function salarioSemanal(horasDetrabalhoSemanais: number): number {
     } else if (horasExtras <= 5) {
         salarioSemanal = horaSemanais * valorHora + horasExtras * valorHoraExtra1;
     } else {
-        salarioSemanal = horaSemanais * valorHora + 5  * valorHoraExtra1 + (horasExtras -5) * valorHoraExtra2;
+        salarioSemanal = horaSemanais * valorHora + 5 * valorHoraExtra1 + (horasExtras - 5) * valorHoraExtra2;
     }
     return salarioSemanal
 }

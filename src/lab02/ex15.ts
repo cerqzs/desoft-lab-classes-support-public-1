@@ -1,14 +1,12 @@
-import { calculoGastos, calculoTempo } from "./functions";
+import { calcularTempoECustoTotal } from "./functions";
 
-let gastosTotal: number;
-let tempoTotal: number;
-let conversaoEurosTempo:number = 10;
+const grama: number = 50; // gramas
+const arvores: number = 5; // árvores
+const arbustos: number = 10; // arbustos
 
-tempoTotal = calculoTempo(20,10,12);
-gastosTotal= calculoGastos(20,10,12) + (calculoTempo(20,10,12) *conversaoEurosTempo); 
+const result= calcularTempoECustoTotal(grama,arvores,arbustos);
 
-
-console.log("o valor total do serviço é de ", gastosTotal, "€ e tem um tempo estimado de", tempoTotal, "horas");
+console.log(result);
 
 
 
