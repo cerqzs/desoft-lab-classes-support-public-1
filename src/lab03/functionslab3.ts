@@ -204,7 +204,7 @@ export function somaMultiplosDoisNumInteiros(multiploX: number, multiploY: numbe
 
     if (Number.isInteger(multiploX,) && Number.isInteger(multiploY)) {
         for (let i = 0; i < intervalo.length; i++) {
-            if (intervalo[i] % multiploX === 0 || intervalo[i] % multiploY === 0) {
+            if (intervalo[i] % multiploX === 0 && intervalo[i] % multiploY === 0) {
                 soma += intervalo[i];
             }
         }
