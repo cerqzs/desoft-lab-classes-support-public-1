@@ -707,7 +707,7 @@ export function obterNumero(numero: number): number {
         throw new RangeError(" O numero deve ser entre 1 e 20")
     }
     for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
-        for (let x = inicioIntervalo; i <= fimIntervalo; x++) {
+        for (let x = i; x <=fimIntervalo; x++) {
             if (numero === i + x) {
                 contagem++;
             }
