@@ -39,6 +39,8 @@ describe ('Testar função volumeCubo', () => {
     )
 }
 )
+
+
 describe ('Testar função volumeCubo', () => {
     test ('Inserido o valor da area de um cubo, o valor do seu volume é calculado e consoante esse valor apresenta o seu tamanho. area de 800  deve dar médio', () => {
 
@@ -58,3 +60,44 @@ describe ('Testar função volumeCubo', () => {
     )
 }
 )
+
+describe ('Testar função volumeCubo', () => {
+    test ('Inserido o valor da area de um cubo, o valor do seu volume é calculado e consoante esse valor apresenta o seu tamanho. area de 580  deve dar peq', () => {
+
+        // arrange
+
+        const area:number= 580;
+        const resultadoEsperado:string= "Pequeno";
+
+        // act
+
+        let resultado= volumeCubo(area);
+
+        //assert 
+
+        expect(resultado).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+
+describe ('Testar função volumeCubo', () => {
+    test ('Inserido o valor da area de um cubo, o valor do seu volume é calculado e consoante esse valor apresenta o seu tamanho. area de 580  deve dar peq', () => {
+
+        // arrange
+
+        const area:number= 600;
+        const resultadoEsperado:string= "Pequeno";
+
+        // act
+
+        let resultado= volumeCubo(area);
+
+        //assert 
+
+        expect(resultado).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+

@@ -20,16 +20,16 @@ export function cambio(moeda: string, valor: number): number {
     const cambioC: number = 9.593;
     const cambioF: number = 1.601;
 
-    if (moeda = "D") {
-        euros = valor * cambioD;
-    } else if (moeda = "L") {
-        euros = valor * cambioL;
-    } else if (moeda = "I") {
-        euros = valor * cambioI;
-    } else if (moeda = "C") {
-        euros = valor * cambioC;
-    } else if (moeda = "F") {
-        euros = valor * cambioF;
+    if (moeda == "D") {
+        euros = Math.trunc(valor * cambioD);
+    } else if (moeda == "L") {
+        euros = Math.trunc(valor * cambioL);
+    } else if (moeda == "I") {
+        euros = Math.trunc(valor * cambioI);
+    } else if (moeda == "C") {
+        euros = Math.trunc( valor * cambioC);
+    } else if (moeda == "F") {
+        euros = Math.trunc( valor * cambioF);
     } else {
         throw new Error("Simbolo de moeda errado ");
     }

@@ -47,3 +47,27 @@ describe('comboios cp', () => {
     )
 }
 )
+
+describe('comboios cp', () => {
+    test('quando a hora de partida for de 16, minutos 1, horas duracao 2 e minutos duracao 2, o resultado deve ser: O comboio chega às 18:03  ', () => {
+
+        //arrange
+
+        const horaPartida: number = 16;
+        const minutosPartida: number = 10;
+        const horasDuracao: number = 24;
+        const minutosDuracao: number = 9;
+
+        const resultadoEsperado: string = "O comboio chega às 16:19";
+
+        //act
+
+        let result = comboiosCp(horaPartida, minutosPartida, horasDuracao, minutosDuracao)
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)

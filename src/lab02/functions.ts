@@ -3,7 +3,7 @@ export function calcularMediaPesada(nota1: number, nota2: number, nota3: number,
     mediaPesada = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3) / (peso1 + peso2 + peso3);
     return mediaPesada
 }
-
+/*
 export function calcularPesoTotal(peso1: number, peso2: number, peso3: number): number {
     let total: number;
     total = peso1 + peso2 + peso3;
@@ -15,7 +15,7 @@ export function calcularNotasPesos(nota1: number, nota2: number, nota3: number, 
     notasPesos = (nota1 * peso1 + nota2 * peso2 + nota3 * peso3);
     return notasPesos
 }
-
+*/
 export function analisarValor(nota1: number): boolean {
     return nota1 >= 8;
 
@@ -32,10 +32,9 @@ export function operadoresDivisao(numero: number): number {
 
     if (numero < 100 || numero > 999) {
         throw new RangeError("Número não tem 3 dígitos");
-        digito1 = -1;
     } else {
         digito3 = numero % 10;
-        digito2 = Math.floor(numero / 10) % 10;
+        digito2 = Math.trunc(numero / 10) % 10;
         digito1 = Math.floor(numero / 100) % 10;
     }
 
@@ -47,24 +46,24 @@ export function numeroPar(num: number): boolean {
 }
 
 export function calculoFuncaoMat(x: number): number {
-    if (x < 0) {
+   
+   const valorZero:number=0;
+    if (x < valorZero) {
         return x;
-    } else if (x = 0) {
-        return 0;
+    } else if (x === 0) {
+        return valorZero;
     } else {
         return x * 2 - 2 * x;
     }
 }
 
 export function volumeCubo(area: number): string {
-    let volume: number;
+    let volume: number= -1;
     let aresta: number;
     if (area > 0) {
-        aresta = Math.round(Math.sqrt(area / 6));
+        aresta = Math.sqrt(area / 6);
         volume = aresta ** 3;
-    } else {
-        volume = -1;
-    }
+    } 
     volume = volume / 1000;
     if (volume <= 1) {
         return 'Pequeno';
@@ -84,7 +83,7 @@ export function saudacaoHoraDia(num: number): string {
         return "Boa noite";
     }
 }
-
+/*
 export function saudacaoDoDia(segundos: number): string {
     const hora = new Date(segundos * 1000).getHours(); // converter segundos em objeto Date e obter hora
     if (hora >= 6 && hora < 12) {
@@ -95,7 +94,7 @@ export function saudacaoDoDia(segundos: number): string {
         return "Boa noite";
     }
 }
-
+*/
 export function tempoDoDia(segundos: number): string {
     const horas: number = Math.floor(segundos / 3600);
     const minutos: number = Math.floor((segundos % 3600) / 60);
@@ -270,8 +269,8 @@ export function horaProcessamento(horasProcess: number, minutosProcess: number, 
     const minutosProcessSegundos = minutosProcess * 60;
 
     let TempoTotalProcessSegundos = horasProcessSegundos + minutosProcessSegundos + segundosProcess + duracaoSegundosProcess;
-    let TempoTotalProcessFormatoHoras = Math.floor(TempoTotalProcessSegundos / 3600) % 24;
-    let tempoTotalProcessFormatoMin = Math.floor((TempoTotalProcessSegundos % 3600) / 60);
+    let TempoTotalProcessFormatoHoras = Math.trunc(TempoTotalProcessSegundos / 3600) % 24;
+    let tempoTotalProcessFormatoMin = Math.trunc((TempoTotalProcessSegundos % 3600) / 60);
     let tempoTotalProcessFormatoSegundos = TempoTotalProcessSegundos % 60;
 
     return `O tempo final do processamento será às ${TempoTotalProcessFormatoHoras.toString().padStart(2, '0')}:${tempoTotalProcessFormatoMin.toString().padStart(2, '0')}:${tempoTotalProcessFormatoSegundos.toString().padStart(2, '0')}`;
