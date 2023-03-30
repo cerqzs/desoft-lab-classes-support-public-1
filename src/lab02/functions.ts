@@ -74,13 +74,16 @@ export function volumeCubo(area: number): string {
     }
 }
 
+// ex09
 export function saudacaoHoraDia(num: number): string {
     if (num >= 21601 && num <= 43200) {
         return "Bom dia";
-    } else if (num >= 43201 && num <= 72000) {
+    } else if (num > 43200 && num <= 72000) {
         return "Boa Tarde";
-    } else {
+    } else if(num >0 && num <= 21600 || num > 72000 && num <= 86400){
         return "Boa noite";
+    } else {
+        throw new RangeError("O dia só tem 24 horas")
     }
 }
 /*
@@ -108,9 +111,9 @@ export function multiplosCheck(x: number, y: number): boolean {
 }
 
 export function imprimeMensagemMultiplos(x: number, y: number): string {
-    if (x % y === 0) {
+    if (x % y == 0) {
         return `${x} é multiplo de ${y}`;
-    } else if (y % x === 0) {
+    } else if (y % x == 0) {
         return `${y} é multiplo de ${x}`;
     } else {
         return `${x} não é multiplo nem divisor de ${y}`;

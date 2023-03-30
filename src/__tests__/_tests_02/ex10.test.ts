@@ -85,7 +85,26 @@ describe (' testar função imprime mensagem multiplos', () => {
 
         const x:number=20;
         const y:number= 10;
-        const resultadoEsperado:string= "20 é multiplo de 10"
+        const resultadoEsperado:string= `${x} é multiplo de ${y}`
+
+        //act
+
+        let result = imprimeMensagemMultiplos(x,y); 
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe (' testar função imprime mensagem multiplos', () => {
+    test (' 20 e 10 sao multiplos, o resultado deve ser 20 é multiplo de 10', () => {
+
+
+        const x:number=20;
+        const y:number= 10;
+        const resultadoEsperado:string= `20 é multiplo de 10`
 
         //act
 
@@ -105,8 +124,7 @@ describe (' testar função imprime mensagem multiplos', () => {
 
         const x:number=150;
         const y:number= 300;
-        const resultadoEsperado:string= "300 é multiplo de 150"
-
+        const resultadoEsperado:string= `${y} é multiplo de ${x}`
         //act
 
         let result = imprimeMensagemMultiplos(x,y); 
@@ -138,3 +156,80 @@ describe (' testar função imprime mensagem multiplos', () => {
     )
 }
 )
+
+describe (' testar função imprime mensagem multiplos', () => {
+    test (' 0 0 ', () => {
+
+
+        const x:number=0;
+        const y:number= 0;
+        const resultadoEsperado:string= `${x} não é multiplo nem divisor de ${y}`
+
+        //act
+
+        let result = imprimeMensagemMultiplos(x,y); 
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+
+describe (' testar função imprime mensagem multiplos', () => {
+    test (' 0 0 ', () => {
+
+
+        const x:number=0;
+        const y:number= 0;
+        const resultadoEsperado:string= `0 não é multiplo nem divisor de 0`
+
+        //act
+
+        let result = imprimeMensagemMultiplos(x,y); 
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe (' testar função imprime mensagem multiplos', () => {
+    test (' 150 e 300 sao multiplos, o resultado deve ser 300 é multiplo de 150', () => {
+
+
+        const x:number=150;
+        const y:number= 300;
+        const resultadoEsperado:string= `300 é multiplo de 150`
+        //act
+
+        let result = imprimeMensagemMultiplos(x,y); 
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe (' teste variados num so teste', () => {
+test("lança exceção quando o número não possui três dígitos", () => {
+   
+    const x1:number= 10;
+    const x2:number=20;
+    const x3:number=5;
+    const y1:number= 5;
+    const y2:number=13;
+    const y3:number= 30; 
+
+    const result1:string= `${x1} é multiplo de ${y1}`;
+    const result2:string= `${x2} não é multiplo nem divisor de ${y2}`;
+    const result3:string= `${y3} é multiplo de ${x3}`;
+    
+     expect(imprimeMensagemMultiplos(x1,y1)).toBe(result1);
+     expect(imprimeMensagemMultiplos(x2,y2)).toBe(result2);
+     expect(imprimeMensagemMultiplos(x3,y3)).toBe(result3);
+   });
+}) // nao conseguimos eliminar mutantes com as combinações. 
