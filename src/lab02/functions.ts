@@ -137,13 +137,13 @@ export function numeroDeTresDigitos(numero: number): string {
 
 export function artigoSaldo(preco: number): number {
     if (preco > 200) {
-        return preco = preco * 0.6;
+        return preco = preco -(preco * 0.6);
     } else if (100 < preco && preco <= 200) {
-        return preco = preco * 0.4;
+        return preco =preco - (preco * 0.4);
     } else if (50 < preco && preco <= 100) {
-        return preco = preco * 0.3;
+        return preco = preco -(preco * 0.3);
     } else {
-        return preco = preco * 0.2;
+        return preco = preco -(preco * 0.2);
     }
 }
 
@@ -224,6 +224,10 @@ export function pintoresPorArea(area: number, salarioPintor: number): number {
     let pintores: number;
     let custoPintor: number;
 
+    if(area<=0) {
+        throw new RangeError("a area tem de ser maior que 0")
+    }
+
     if (area > 0 && area <= 100) {
         pintores = 1;
     } else if (area > 100 && area <= 300) {
@@ -258,7 +262,10 @@ export function comboiosCp(horaPartida: number, minutosPartida: number, horasDur
     let horaChegada = Math.floor(chegadaEmMin / 60) % 24; // converte a hora de chegada de volta para o formato de hora e minuto
     let minChegada = chegadaEmMin % 60;
 
-    if (horaChegada < horaPartida || horaChegada === horaPartida && minChegada < minutosPartida) {
+    if(horaChegada == horaPartida && minChegada >= minutosPartida) {
+        throw new Error("a viagem nao pode durar mais de 24h")
+    }
+    if (horaChegada < horaPartida) {
         return `O comboio chega no dia seguinte às ${horaChegada.toString().padStart(2, '0')}:${minChegada.toString().padStart(2, '0')}`;
     } else {
         return `O comboio chega às ${horaChegada.toString().padStart(2, '0')}:${minChegada.toString().padStart(2, '0')}`;

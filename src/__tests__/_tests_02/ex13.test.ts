@@ -145,3 +145,103 @@ describe ('testar função notas da turma', () => {
 }
 )
 
+describe ('testar função notas da turma', () => {
+    test ('aprovados e limit max', () => {
+
+        //arrange
+
+        const aprovados:number= 1;
+        const limiteMi:number=0.7;
+        const limiteMa:number=1;
+        const resultadoEsperado:string="Turma Excelente"
+        //act
+
+        let result= notasTurma(aprovados,limiteMi,limiteMa);
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe ('testar função notas da turma', () => {
+    test ('0.2 teste', () => {
+
+        //arrange
+
+        const aprovados:number= 0.2;
+        const limiteMi:number=0.1;
+        const limiteMa:number=1;
+        const resultadoEsperado:string="Turma fraca"
+        //act
+
+        let result= notasTurma(aprovados,limiteMi,limiteMa);
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe ('testar função notas da turma', () => {
+    test ('05 teste', () => {
+
+        //arrange
+
+        const aprovados:number= 0.5;
+        const limiteMi:number=0.2;
+        const limiteMa:number=1;
+        const resultadoEsperado:string="Turma razoavel"
+        //act
+
+        let result= notasTurma(aprovados,limiteMi,limiteMa);
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe ('testar função notas da turma', () => {
+    test ('07 teste', () => {
+
+        //arrange
+
+        const aprovados:number= 0.7;
+        const limiteMi:number=0.2;
+        const limiteMa:number=1;
+        const resultadoEsperado:string="Turma Boa"
+        //act
+
+        let result= notasTurma(aprovados,limiteMi,limiteMa);
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)
+describe ('testar função notas da turma', () => {
+    test ('09 teste', () => {
+
+        //arrange
+
+        const aprovados:number= 0.9;
+        const limiteMi:number=0.2;
+        const limiteMa:number=1;
+        const resultadoEsperado:string="Turma Excelente"
+        //act
+
+        let result= notasTurma(aprovados,limiteMi,limiteMa);
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)

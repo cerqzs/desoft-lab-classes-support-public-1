@@ -114,3 +114,82 @@ describe('testar a função tinta por area', () => {
     )
 }
 )
+
+describe ('testar função pintores', () => {
+    test ('combo mutantantes ', () => {
+
+        //arrange
+        const area1:number= 0;
+        const area2:number=50;
+        const area3:number=100;
+        const area4:number=120;
+        const area5:number=300;
+        const area6:number=500;
+        const area7:number=1000;
+        const area8:number=1200;
+
+        const salario1:number=100;
+        const salario2:number=100;
+        const salario3:number=100;
+        const salario4:number=100;
+        const salario5:number=100;
+        const salario6:number=100;
+        const salario7:number=100;
+        const salario8:number=100;
+
+        const resultado2:number=312.5;
+        const resultado3:number=625;
+        const resultado4:number=1500;
+        const resultado5:number=3750;
+        const resultado6:number=9375;
+        const resultado7:number=18750;
+        const resultado8:number=30000;
+        
+        //act
+
+        let result2= pintoresPorArea(area2,salario2);
+        let result3= pintoresPorArea(area3,salario3);
+        let result4= pintoresPorArea(area4,salario4)
+        let result5= pintoresPorArea(area5,salario5)
+        let result6= pintoresPorArea(area6,salario6)
+        let result7= pintoresPorArea(area7,salario7)
+        let result8= pintoresPorArea(area8,salario8)
+
+        //assert
+
+        expect(() => pintoresPorArea(area1,salario1)).toThrowError(RangeError("a area tem de ser maior que 0"));
+        expect(result2).toBe(resultado2);
+        expect(result3).toBe(resultado3);
+        expect(result4).toBe(resultado4);
+        expect(result5).toBe(resultado5);
+        expect(result6).toBe(resultado6);
+        expect(result7).toBe(resultado7);
+        expect(result8).toBe(resultado8);
+        
+    }
+    )
+}
+)
+describe ('testar função pintores', () => {
+    test ('combo mutantantes 2  ', () => {
+
+        //arrange
+        const area1:number= 100;
+        const area2:number=101;
+
+        const salario1:number=100;
+        const salario2:number=100;
+
+        const resultado2:number=625;
+        const resultado3:number=1262.5;
+
+        let result2= pintoresPorArea(area1,salario1);
+        let result3= pintoresPorArea(area2,salario2);
+
+        expect(result2).toBe(resultado2);
+        expect(result3).toBe(resultado3);
+
+    }
+    )
+}
+)

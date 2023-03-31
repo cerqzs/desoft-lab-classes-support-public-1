@@ -1,3 +1,3 @@
 import { comboiosCp } from "./functions";
 
-console.log(comboiosCp(22,10,1,10));
+console.log(comboiosCp(16,0,24,0));

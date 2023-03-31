@@ -196,3 +196,4 @@ test("lança exceção quando o número não possui três dígitos", () => {
   });
   // ao testar as tres condições no mesmo teste eliminou os mutantes.
   
+
