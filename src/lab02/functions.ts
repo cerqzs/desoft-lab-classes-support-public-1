@@ -265,7 +265,7 @@ export function comboiosCp(horaPartida: number, minutosPartida: number, horasDur
     if(horaChegada == horaPartida && minChegada >= minutosPartida) {
         throw new Error("a viagem nao pode durar mais de 24h")
     }
-    if (horaChegada < horaPartida) {
+    if (horaChegada < horaPartida || horaChegada == horaPartida && minChegada < minutosPartida) {
         return `O comboio chega no dia seguinte às ${horaChegada.toString().padStart(2, '0')}:${minChegada.toString().padStart(2, '0')}`;
     } else {
         return `O comboio chega às ${horaChegada.toString().padStart(2, '0')}:${minChegada.toString().padStart(2, '0')}`;

@@ -102,3 +102,27 @@ describe('comboios cp', () => {
     )
 }
 )
+
+describe('comboios cp', () => {
+    test('tesra 2 if  ', () => {
+
+        //arrange
+
+        const horaPartida: number = 16;
+        const minutosPartida: number = 10;
+        const horasDuracao: number = 23;
+        const minutosDuracao: number = 54;
+
+        const resultadoEsperado: string = "O comboio chega no dia seguinte às 16:04" ;
+
+        //act
+
+        let result = comboiosCp(horaPartida, minutosPartida, horasDuracao, minutosDuracao)
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    }
+    )
+}
+)

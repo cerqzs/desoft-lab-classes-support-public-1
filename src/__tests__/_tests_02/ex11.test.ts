@@ -190,8 +190,8 @@ test("lança exceção quando o número não possui três dígitos", () => {
    const num2:number=10;
    const num3:number=1000;
    
-    expect(() => numeroDeTresDigitos(num1)).toThrowError(RangeError);
-    expect(() => numeroDeTresDigitos(num2)).toThrowError(RangeError);
+    expect(() => numeroDeTresDigitos(num1)).toThrowError(RangeError("O numero deve ter 3 digitos"));
+    expect(() => numeroDeTresDigitos(num2)).toThrowError(RangeError("O numero deve ter 3 digitos"));
     expect(() => numeroDeTresDigitos(num3)).toThrowError(RangeError);
   });
   // ao testar as tres condições no mesmo teste eliminou os mutantes.
