@@ -85,7 +85,7 @@ describe('cambio', () => {
 })
 
 describe('cambio', () => {
-    test('quando moeda for C e o valor 80 o resultado devera ser 767.44    ', () => {
+    test('quando moeda for C e o valor 80 o resultado devera ser 767.44  e mensagem de erro   ', () => {
 
         //arrange
 
@@ -101,6 +101,14 @@ describe('cambio', () => {
         //assert
 
         expect(result).toBe(resultadoEsperado);
-    }
-    )
-})
+
+        const moeda2: string = "X";
+        const valor2:number= 150 ;
+        //act
+        //assert
+    
+        expect(() => {cambio(moeda2,valor2)}).toThrow(new Error("Simbolo de moeda errado "));
+    })
+    
+    })
+  
