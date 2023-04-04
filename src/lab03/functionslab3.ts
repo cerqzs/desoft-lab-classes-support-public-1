@@ -31,7 +31,7 @@ export function cambio(moeda: string, valor: number): number {
     } else if (moeda == "F") {
         euros = Math.trunc( valor * cambioF);
     } else {
-        throw new Error("Simbolo de moeda errado ");
+        throw new Error("Simbolo de moeda errado");
     }
     return euros;
 
@@ -117,7 +117,7 @@ export function retencaoSalarial(salario: number): number {
 
     let salarioLiquido: number;
 
-    if (salario < 0) {
+    if (salario <= 0) {
         throw new RangeError("O salario tem de ser maior que 0");
     } else if (salario <= 500) {
         salarioLiquido = salario - (salario * 0.1);
@@ -165,16 +165,16 @@ export function multiplosNumeroInteiro(multiplo: number, intervalo: number[]): n
 //ex 06C)
 
 export function multiplosTresCinco(intervalo: number[]): number {
-
-    const multiploTres: number = 3;
+    
     const multiploCinco: number = 5;
     let contagem: number = 0;
 
     for (let i = 0; i < intervalo.length; i++) {
-        if (intervalo[i] % multiploTres === 0 || intervalo[i] % multiploCinco === 0) {
+        if (intervalo[i] % multiploCinco === 0) {
             contagem++;
         }
     }
+    contagem = contagem + multiplosDeTres(intervalo)
     return contagem;
 }
 

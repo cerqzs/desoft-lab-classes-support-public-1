@@ -107,7 +107,7 @@ describe('cambio', () => {
         //act
         //assert
     
-        expect(() => {cambio(moeda2,valor2)}).toThrow(new Error("Simbolo de moeda errado "));
+        expect(() => {cambio(moeda2,valor2)}).toThrow(new Error("Simbolo de moeda errado"));
     })
     
     })
