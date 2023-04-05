@@ -1,7 +1,7 @@
 import { cambio } from "../../lab03/functionslab3";
 
 describe('cambio', () => {
-    test('quando moeda for D e o valor 45 o resultado devera ser 69.03   ', () => {
+    test('quando moeda for D e o valor 45 o resultado devera ser 69  ', () => {
 
         //arrange
 
@@ -85,7 +85,7 @@ describe('cambio', () => {
 })
 
 describe('cambio', () => {
-    test('quando moeda for C e o valor 80 o resultado devera ser 767.44  e mensagem de erro   ', () => {
+    test('quando moeda for F e o valor 150 o resultado devera ser 240  e mensagem de erro   ', () => {
 
         //arrange
 

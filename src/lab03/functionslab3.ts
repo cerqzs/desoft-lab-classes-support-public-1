@@ -318,7 +318,7 @@ export function mediaMultiplos(multiplo: number, inicioIntervalo: number, fimInt
             contagem++;
         }
     }
-    media = soma / contagem;
+    media = Math.trunc(soma / contagem);
     return media;
 }
 
@@ -339,7 +339,7 @@ export function mediaMultiplosDoisValores(multiploX: number, multiploY: number, 
             contagem++;
         }
     }
-    media = soma / contagem;
+    media = Math.trunc(soma / contagem);
     return media;
 }
 

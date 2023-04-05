@@ -46,7 +46,7 @@ describe('descrição do produto', () => {
     )
 })
 describe('descrição do produto', () => {
-    test('codigo entre 5 e 6 deve retornar Alimento perecível     ', () => {
+    test('codigo entre 5 e 6 deve retornar Vestuario     ', () => {
 
         //arrange
 
