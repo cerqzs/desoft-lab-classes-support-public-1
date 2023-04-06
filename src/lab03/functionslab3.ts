@@ -465,7 +465,7 @@ export function mediaAlgarismosNumInt(numero: number): number {
     } else {
         throw new Error("O numero deve ser inteiro")
     }
-    media = soma / algarismos.length;
+    media = Math.trunc( soma / algarismos.length);
 
     return media;
 }
@@ -474,24 +474,12 @@ export function mediaAlgarismosNumInt(numero: number): number {
 
 export function mediaAlgarismosPares(numero: number): number {
 
-    let soma: number = 0;
-    let contagem: number = 0;
-    let media: number = 0;
-
-    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
-
-    if (Number.isInteger(numero)) {
-        for (let i = 0; i < algarismos.length; i++) {
-            if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.  // 
-                soma += parseInt(algarismos[i]);
-                contagem++;
-            }
-        }
-    } else {
+    if (!Number.isInteger(numero)) {  //O ! antes da expressão Number.isInteger(numero) é um operador de negação lógica. 
         throw new Error("O numero deve ser inteiro")
     }
-    media = soma / contagem;
-
+    const soma= somaAlgarismosPares(numero);
+    const contagem= contaAlgarismosPares(numero);
+    const media = contagem > 0 ? soma / contagem :0; //condição ? valor_se_verdadeiro : valor_se_falso;
     return media;
 }
 
@@ -499,23 +487,12 @@ export function mediaAlgarismosPares(numero: number): number {
 
 export function mediaAlgarismosImpares(numero: number): number {
 
-    let soma: number = 0;
-    let contagem: number = 0;
-    let media: number = 0;
-    const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
-
-    if (Number.isInteger(numero)) {
-        for (let i = 0; i < algarismos.length; i++) {
-            if (parseInt(algarismos[i]) % 2 != 0) {   // converte os caracteres em numeros inteiros.  // 
-                soma += parseInt(algarismos[i]);
-                contagem++;
-            }
-        }
-    } else {
+    if (!Number.isInteger(numero)) {  //O ! antes da expressão Number.isInteger(numero) é um operador de negação lógica. 
         throw new Error("O numero deve ser inteiro")
     }
-    media = soma / contagem;
-
+    const soma= somaAlgarismosImpares(numero);
+    const contagem= contaAlgarismosImpares(numero);
+    const media = contagem > 0 ? soma / contagem: 0;  // condição ? valor_se_verdadeiro : valor_se_falso;
     return media;
 }
 
@@ -538,8 +515,7 @@ export function numeroInteiroInvertido(numero: number): number {
 
 export function verificarCapicua(numero: number): boolean {
 
-    let numeroInvertido: number;
-    numeroInvertido = parseInt(numero.toString().split('').reverse().join(''));
+    const numeroInvertido = numeroInteiroInvertido(numero);
     return numero === numeroInvertido;
 
 }
