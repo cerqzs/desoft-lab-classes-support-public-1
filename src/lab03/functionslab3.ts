@@ -548,6 +548,7 @@ export function verificarArmStrong(numero: number): boolean {
         numeroOriginal = Math.floor(numeroOriginal / 10); // remove o ultimo digito da variavel numero e prepara o ciclo para a proxima interação
     }
 
+    
     return soma === numero;
 }
 
@@ -696,9 +697,9 @@ export function obterNumero(numero: number): number {
 
 export function canicultura(pesoAnimalKg: number, racaoGramas: number): number {
 
-    if (pesoAnimalKg <= 10 && racaoGramas === 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas === 250 || pesoAnimalKg < 25 && pesoAnimalKg <= 45 && racaoGramas === 300 || pesoAnimalKg > 45 && racaoGramas === 500) {
+    if (pesoAnimalKg <= 10 && racaoGramas === 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas === 250 || pesoAnimalKg > 25 && pesoAnimalKg <= 45 && racaoGramas === 300 || pesoAnimalKg > 45 && racaoGramas === 500) {
         return 0;
-    } else if (pesoAnimalKg <= 10 && racaoGramas > 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas > 250 || pesoAnimalKg < 25 && pesoAnimalKg <= 45 && racaoGramas > 300 || pesoAnimalKg > 45 && racaoGramas > 500) {
+    } else if (pesoAnimalKg <= 10 && racaoGramas > 100 || pesoAnimalKg > 10 && pesoAnimalKg <= 25 && racaoGramas > 250 || pesoAnimalKg > 25 && pesoAnimalKg <= 45 && racaoGramas > 300 || pesoAnimalKg > 45 && racaoGramas > 500) {
         return 1;
     } else {
         return -1;
