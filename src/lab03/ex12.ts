@@ -4,4 +4,4 @@ const numero:number =9;
 
 const resultado = classificacaoNumeros(numero);
 
-console.log(resultado);
+//console.log(resultado);

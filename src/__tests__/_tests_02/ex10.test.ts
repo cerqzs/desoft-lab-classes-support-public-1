@@ -1,7 +1,7 @@
 import { multiplosCheck, imprimeMensagemMultiplos } from "../../lab02/functions";
 
 describe ('testar função multiploscheck ', () => {
-    test ('testar se 10 e 5 sao multiplos, o resultado deve ser true', () => {
+    test ('testar se 10 e 5 sao multiplos o resultado deve ser true', () => {
 
 
         const x:number=10;
@@ -20,7 +20,7 @@ describe ('testar função multiploscheck ', () => {
 }
 )
 describe ('testar função multiploscheck ', () => {
-    test ('testar se 50 e 200 sao multiplos, o resultado deve ser true', () => {
+    test ('testar se 50 e 200 sao multiplos o resultado deve ser true', () => {
 
 
         const x:number=50;
@@ -39,7 +39,7 @@ describe ('testar função multiploscheck ', () => {
 }
 )
 describe ('testar função multiploscheck ', () => {
-    test ('testar se 19 e 500 sao multiplos, o resultado deve ser false', () => {
+    test ('testar se 19 e 500 sao multiplos o resultado deve ser false', () => {
 
 
         const x:number=19;
@@ -60,7 +60,7 @@ describe ('testar função multiploscheck ', () => {
 
 
 describe ('testar função multiploscheck ', () => {
-    test ('testar se 100 e 100 sao multiplos, o resultado deve ser true', () => {
+    test ('testar se 100 e 100 sao multiplos o resultado deve ser true', () => {
 
 
         const x:number=100;
@@ -79,8 +79,8 @@ describe ('testar função multiploscheck ', () => {
 }
 )
 
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 20 e 10 sao multiplos, o resultado deve ser 20 é multiplo de 10', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('20 e 10 sao multiplos o resultado deve ser 20 é multiplo de 10', () => {
 
 
         const x:number=20;
@@ -98,8 +98,8 @@ describe (' testar função imprime mensagem multiplos', () => {
     )
 }
 )
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 20 e 10 sao multiplos, o resultado deve ser 20 é multiplo de 10', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('20 e 10 sao multiplos o resultado deve ser 20 é multiplo de 10', () => {
 
 
         const x:number=20;
@@ -118,8 +118,8 @@ describe (' testar função imprime mensagem multiplos', () => {
 }
 )
 
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 150 e 300 sao multiplos, o resultado deve ser 300 é multiplo de 150', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('150 e 300 sao multiplos o resultado deve ser 300 é multiplo de 150', () => {
 
 
         const x:number=150;
@@ -137,8 +137,8 @@ describe (' testar função imprime mensagem multiplos', () => {
 }
 )
 
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 39 e 147 não sao multipplos, o resultado deve ser que 39 não é multiplo nem divisor de 147', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('39 e 147 nao sao multipplos o resultado deve ser que 39 nao e multiplo nem divisor de 147', () => {
 
 
         const x:number=39;
@@ -157,8 +157,8 @@ describe (' testar função imprime mensagem multiplos', () => {
 }
 )
 
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 0 0 ', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('0 0', () => {
 
 
         const x:number=0;
@@ -177,8 +177,8 @@ describe (' testar função imprime mensagem multiplos', () => {
 }
 )
 
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 0 0 ', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('0 0', () => {
 
 
         const x:number=0;
@@ -196,8 +196,8 @@ describe (' testar função imprime mensagem multiplos', () => {
     )
 }
 )
-describe (' testar função imprime mensagem multiplos', () => {
-    test (' 150 e 300 sao multiplos, o resultado deve ser 300 é multiplo de 150', () => {
+describe ('testar função imprime mensagem multiplos', () => {
+    test ('150 e 300 sao multiplos, o resultado deve ser 300 é multiplo de 150', () => {
 
 
         const x:number=150;
@@ -214,8 +214,8 @@ describe (' testar função imprime mensagem multiplos', () => {
     )
 }
 )
-describe (' teste variados num so teste', () => {
-test("lança exceção quando o número não possui três dígitos", () => {
+describe ('teste variados num so teste', () => {
+test("lança excecao quando o número não possui tres digitos", () => {
    
     const x1:number= 10;
     const x2:number=20;

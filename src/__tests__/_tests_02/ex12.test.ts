@@ -111,7 +111,7 @@ describe ('testar função artigo de saldo', () => {
     )
 }
 )
-describe(' ',() => {
+describe('artigo de saldo',() => {
 test("varios valores", () => {
    
     const num1:number= 100;

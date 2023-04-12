@@ -1,7 +1,7 @@
 import { verificarArmStrong } from "../../lab03/functionslab3";
 
 describe('verificar armstrong', () => {
-    test('verifica se o numero introduzido é um numero Armstrong, 1,153,370 devem devolver true e 6,7 e 411 false ', () => {
+    test('verifica se o numero introduzido é um numero Armstrong 1 153 370 devem devolver true e 6 7 e 411 false', () => {
 
         //arrange
 

@@ -1,7 +1,7 @@
 import { classificacaoNumeros } from "../../lab03/functionslab3";
 
-describe(' classificaçao numeros', () => {
-    test('o numero 6 deve retornar 0 , 12 deve retornar 1 e o 9 deve retornar -1', () => {
+describe('classificacao numeros', () => {
+    test('o numero 6 deve retornar 0 12 deve retornar 1 e o 9 deve retornar -1', () => {
 
         //arrange
         const numero:number= 6;

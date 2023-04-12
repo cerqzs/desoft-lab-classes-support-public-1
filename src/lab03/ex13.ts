@@ -4,4 +4,4 @@ const numero:number= 5;
 
 const resultado = obterNumero(numero);
 
-console.log(resultado);
+//console.log(resultado);

@@ -5,4 +5,4 @@ const racaoGramas: number= 90;
 
 const resultado= canicultura(pesoAnimalKg,racaoGramas);
 
-console.log(resultado);
+//console.log(resultado)

@@ -5,4 +5,4 @@ const fimIntervalo:number =999;
 
 const resultado= contarArmstrong(inicioIntervalo,fimIntervalo);
 
-console.log(resultado);
+//console.log(resultado);

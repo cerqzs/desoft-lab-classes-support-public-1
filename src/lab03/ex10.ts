@@ -5,4 +5,4 @@ const salario:number = 500;
 
 const resultado = calculoVencimento(horasExtra,salario);
 
-console.log(resultado);
+//console.log(resultado);

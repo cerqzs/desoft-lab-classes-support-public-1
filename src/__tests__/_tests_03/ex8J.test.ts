@@ -1,7 +1,7 @@
 import { numeroInteiroInvertido } from "../../lab03/functionslab3";
 
-describe('função numero inteiro invertido', () => {
-    test('devolve a inversão de um numero inteiro e mensagem de erro quando 42.5 ', () => {
+describe('funcao numero inteiro invertido', () => {
+    test('devolve a inversao de um numero inteiro e mensagem de erro quando 42.5', () => {
 
         //arrange
 

@@ -1,7 +1,7 @@
 import { numeroDeTresDigitos,} from "../../lab02/functions";
 
-describe (' testar função numero de tres digitos', () => {
-    test (' o numero 99 não tem tres digitos, deve lançar mensagem de erro', () => {
+describe ('testar função numero de tres digitos', () => {
+    test ('o numero 99 não tem tres digitos deve lançar mensagem de erro', () => {
 
         //arrange
 
@@ -15,7 +15,7 @@ describe (' testar função numero de tres digitos', () => {
   });
 
   describe ('testar função numero de tres digitos', () => {
-    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao, o numero sera o 258 e deve ser crescente', () => {
+    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao o numero sera o 258 e deve ser crescente', () => {
 
         //arrange
 
@@ -34,7 +34,7 @@ describe (' testar função numero de tres digitos', () => {
 )
 
 describe ('testar função numero de tres digitos', () => {
-    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao, o numero sera o 222 e deve ser não crescente', () => {
+    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao o numero sera o 222 e deve ser não crescente', () => {
 
         //arrange
 
@@ -53,7 +53,7 @@ describe ('testar função numero de tres digitos', () => {
 )
 
 describe ('testar função numero de tres digitos', () => {
-    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao, o numero sera o 141 e deve ser não crescente', () => {
+    test ('quando introduzidos 3 numeros entre 100 e 999 verificar se a sequencias destes é crescente ou nao o numero sera o 141 e deve ser não crescente', () => {
 
         //arrange
 
@@ -70,8 +70,8 @@ describe ('testar função numero de tres digitos', () => {
     )
 }
 )
-describe (' testar função numero de tres digitos', () => {
-    test (' o numero 88 não tem tres digitos, deve lançar mensagem de erro', () => {
+describe ('testar função numero de tres digitos', () => {
+    test ('o numero 88 não tem tres digitos deve lançar mensagem de erro', () => {
 
         //arrange
 
@@ -84,8 +84,8 @@ describe (' testar função numero de tres digitos', () => {
     });
   });
 
-  describe (' testar função numero de tres digitos', () => {
-    test (' o numero 88 não tem tres digitos, deve lançar mensagem de erro', () => {
+  describe ('testar função numero de tres digitos', () => {
+    test ('o numero 88 não tem tres digitos deve lançar mensagem de erro', () => {
 
         //arrange
 
@@ -97,8 +97,8 @@ describe (' testar função numero de tres digitos', () => {
       }).toThrow(RangeError("O numero deve ter 3 digitos"));
     });
   });
-  describe (' testar função numero de tres digitos', () => {
-    test (' o numero 88 não tem tres digitos, deve lançar mensagem de erro', () => {
+  describe ('testar função numero de tres digitos', () => {
+    test ('o numero 88 não tem tres digitos deve lançar mensagem de erro', () => {
 
         //arrange
 

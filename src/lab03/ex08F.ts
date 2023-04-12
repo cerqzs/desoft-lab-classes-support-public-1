@@ -4,4 +4,4 @@ const numero:number= 135468;
 
 const resultado = somaAlgarismosImpares(numero);
 
-console.log(resultado);
+//console.log(resultado);

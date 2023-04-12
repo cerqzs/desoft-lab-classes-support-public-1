@@ -5,4 +5,4 @@ const fimIntervalo:number =20;
 
 const resultado= contarCapicuas(inicioIntervalo,fimIntervalo);
 
-console.log(resultado);
+//console.log(resultado);

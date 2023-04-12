@@ -5,4 +5,4 @@ const numero:number= 30;
 
 const resultado = posicaoProdutoAcumulado(lista,numero);
 
-console.log(resultado);
+//console.log(resultado);

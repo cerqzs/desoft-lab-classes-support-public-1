@@ -1,7 +1,7 @@
 import { verificarCapicua } from "../../lab03/functionslab3";
 
 describe('verificar capicua', () => {
-    test('verifica se o numero introduzido é uma capicua, 434 deve devolver true e 411 false ', () => {
+    test('verifica se o numero introduzido é uma capicua 434 deve devolver true e 411 false', () => {
 
         //arrange
 

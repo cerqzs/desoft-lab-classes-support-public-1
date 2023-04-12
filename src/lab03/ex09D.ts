@@ -5,4 +5,4 @@ const fimIntervalo:number =35;
 
 const resultado= maiorCapicua(inicioIntervalo,fimIntervalo);
 
-console.log(resultado);
+// console.log(resultado);

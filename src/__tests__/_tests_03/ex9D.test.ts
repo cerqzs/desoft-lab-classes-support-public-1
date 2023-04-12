@@ -1,7 +1,7 @@
 import { maiorCapicua } from "../../lab03/functionslab3";
 
-describe(' capicua maior', () => {
-    test('verifica qual a capicua maior, no intervalo 10 e 33 deve devolver 33', () => {
+describe('capicua maior', () => {
+    test('verifica qual a capicua maior no intervalo 10 e 33 deve devolver 33', () => {
 
         //arrange
 
@@ -23,8 +23,8 @@ describe(' capicua maior', () => {
     })    
 })
 
-describe(' capicua maior', () => {
-    test('verifica qual a capicua maior, no intervalo 10 e 33 deve devolver 33', () => {
+describe('capicua maior', () => {
+    test('verifica qual a capicua maior no intervalo 10 e 33 deve devolver 33', () => {
 
         //arrange
 

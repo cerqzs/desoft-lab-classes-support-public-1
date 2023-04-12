@@ -1,7 +1,7 @@
 import { posicaoProdutoAcumulado } from "../../lab03/functionslab3";
 
-describe(' posição do produto acumulado', () => {
-    test('devolve a posição onde o produto acumulado dos numeros da lista ultrapassa o numero introduzido, a lista de 2,3,4,5,6 e o numero 119 o resultado deve ser 4 ', () => {
+describe('posição do produto acumulado', () => {
+    test('devolve a posição onde o produto acumulado dos numeros da lista ultrapassa o numero introduzido a lista de 2 3 4 5 6 e o numero 119 o resultado deve ser 4', () => {
 
         //arrange
 

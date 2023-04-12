@@ -1,6 +1,6 @@
 import { contarCapicuas } from "../../lab03/functionslab3";
 
-describe(' contar capicuas', () => {
+describe('contar capicuas', () => {
     test('verifica quantas capicuas existem no intervalo 10 e 33 deve devolver 3', () => {
 
         //arrange
