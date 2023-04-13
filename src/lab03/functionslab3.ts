@@ -27,9 +27,9 @@ export function cambio(moeda: string, valor: number): number {
     } else if (moeda == "I") {
         euros = Math.trunc(valor * cambioI);
     } else if (moeda == "C") {
-        euros = Math.trunc( valor * cambioC);
+        euros = Math.trunc(valor * cambioC);
     } else if (moeda == "F") {
-        euros = Math.trunc( valor * cambioF);
+        euros = Math.trunc(valor * cambioF);
     } else {
         throw new Error("Simbolo de moeda errado");
     }
@@ -165,7 +165,7 @@ export function multiplosNumeroInteiro(multiplo: number, intervalo: number[]): n
 //ex 06C)
 
 export function multiplosTresCinco(intervalo: number[]): number {
-    
+
     const multiploCinco: number = 5;
     let contagem: number = 0;
 
@@ -355,17 +355,12 @@ export function numeroAlgarismosNumInt(numero: number): number {
 export function contaAlgarismosPares(numero: number): number {
 
     let contagem = 0;
-
     const algarismos = numero.toString().split('');    // converte o numero numa string. divide a string em caracteres individuais
 
-    if (Number.isInteger(numero)) {
-        for (let i = 0; i < algarismos.length; i++) {
-            if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.
-                contagem++;
-            }
+    for (let i = 0; i < algarismos.length; i++) {
+        if (parseInt(algarismos[i]) % 2 === 0) {   // converte os caracteres em numeros inteiros.
+            contagem++;
         }
-    } else {
-        throw new Error("O numero deve ser inteiro")
     }
     return contagem;
 }
@@ -465,7 +460,7 @@ export function mediaAlgarismosNumInt(numero: number): number {
     } else {
         throw new Error("O numero deve ser inteiro")
     }
-    media = Math.trunc( soma / algarismos.length);
+    media = Math.trunc(soma / algarismos.length);
 
     return media;
 }
@@ -474,25 +469,20 @@ export function mediaAlgarismosNumInt(numero: number): number {
 
 export function mediaAlgarismosPares(numero: number): number {
 
-    if (!Number.isInteger(numero)) {  //O ! antes da expressão Number.isInteger(numero) é um operador de negação lógica. 
-        throw new Error("O numero deve ser inteiro")
-    }
-    const soma= somaAlgarismosPares(numero);
-    const contagem= contaAlgarismosPares(numero);
-    const media = contagem > 0 ? soma / contagem :0; //condição ? valor_se_verdadeiro : valor_se_falso;
+    const soma = somaAlgarismosPares(numero);
+    const contagem = contaAlgarismosPares(numero);
+    const media = contagem > 0 ? soma / contagem : 0; //condição ? valor_se_verdadeiro : valor_se_falso;
     return media;
 }
+
 
 //ex08I 
 
 export function mediaAlgarismosImpares(numero: number): number {
 
-    if (!Number.isInteger(numero)) {  //O ! antes da expressão Number.isInteger(numero) é um operador de negação lógica. 
-        throw new Error("O numero deve ser inteiro")
-    }
-    const soma= somaAlgarismosImpares(numero);
-    const contagem= contaAlgarismosImpares(numero);
-    const media = contagem > 0 ? soma / contagem: 0;  // condição ? valor_se_verdadeiro : valor_se_falso;
+    const soma = somaAlgarismosImpares(numero);
+    const contagem = contaAlgarismosImpares(numero);
+    const media = contagem > 0 ? soma / contagem : 0;  // condição ? valor_se_verdadeiro : valor_se_falso;
     return media;
 }
 
@@ -548,7 +538,7 @@ export function verificarArmStrong(numero: number): boolean {
         numeroOriginal = Math.floor(numeroOriginal / 10); // remove o ultimo digito da variavel numero e prepara o ciclo para a proxima interação
     }
 
-    
+
     return soma === numero;
 }
 
@@ -684,7 +674,7 @@ export function obterNumero(numero: number): number {
         throw new RangeError(" O numero deve ser entre 1 e 20")
     }
     for (let i = inicioIntervalo; i <= fimIntervalo; i++) {
-        for (let x = i; x <=fimIntervalo; x++) {
+        for (let x = i; x <= fimIntervalo; x++) {
             if (numero === i + x) {
                 contagem++;
             }
@@ -713,7 +703,7 @@ export function caniculturaB(pesos: number[], racoes: number[]): number[] {
     for (let i = 0; i < pesos.length; i++) {
         const peso = pesos[i];
         const racao = racoes[i];
-        if (peso < 0) {
+        if (peso <= 0) {
             throw new Error("O peso do cão não pode ser negativo");
         }
         let racaoAdequada: number;
@@ -763,6 +753,11 @@ export function separacaoParesImpares(sequencia: number[]): number[] {
     let numerosPares: number[] = [];
     let numerosImpares: number[] = [];
 
+    for (const i of sequencia) {
+        if (i <= 0 || i > 9 || !Number.isInteger(i)) {
+            throw RangeError('Only takes one digit positive input values')
+        }
+    }
     for (let i = 0; i < sequencia.length; i++) {
         if (sequencia[i] % 2 === 0) {
             numerosPares.push(sequencia[i]);

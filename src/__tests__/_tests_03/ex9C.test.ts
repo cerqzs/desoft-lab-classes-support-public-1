@@ -25,3 +25,25 @@ describe('primeira capicua', () => {
        
     })    
 })
+
+describe('primeira capicua', () => {
+    test('verifica se existem capicuas no intervalo e devolve a primeira, entre o intervalo 10 e 11 deve devolver o 11', () => {
+
+        //arrange
+
+        const start:number=10;
+        const end:number= 11;
+        const resultadoEsperado=11;
+        
+
+
+        //act
+
+        let result = primeiraCapicua(start,end);
+        
+
+        //assert
+
+        expect(result).toBe(resultadoEsperado);
+    })    
+})

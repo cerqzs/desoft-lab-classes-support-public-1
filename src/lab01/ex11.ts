@@ -10,7 +10,7 @@ FIM */
 
 export function calcularAlturaPredio (tempo:number) :number {
     let alturaEdificio: number;
-    alturaEdificio = 0 * tempo + (9.8 *2**2)/2;
+    alturaEdificio = (9.8 *2**2)/2;
     return alturaEdificio
 }
 
