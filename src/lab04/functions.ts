@@ -217,9 +217,14 @@ export function uniqueElementsArray(numbers: number[]): number[] {
     return unrepeatedValues;
 }
 
-
 //13 F
 
+export function inverseArray(array:number[]): number[] {
+
+   return array.reverse();
+}
+
+//13 E 
 
 
 
