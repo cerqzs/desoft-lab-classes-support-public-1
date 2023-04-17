@@ -196,24 +196,27 @@ export function productArrayElements(array: number[]): number {
     return product
 }
 //13 E
-export function uniqueElementsArray(array: number[]): number[] {
+export function uniqueElementsArray(numbers: number[]): number[] {
 
-    const uniqueArray: number[] = [];
-    const count: { [key: number]: number } = {}; // nr que aparece no Array - nr de vezes que aparece no array
+    const unrepeatedValues = [];
 
-    for (let i = 0; i < array.length; i++) {
-        const num = array[i];
-        count[num] = (count[num] || 0) + 1; //// nr que aparece no Array - nr de vezes que aparece no array | Atribui um valor ao objeto count na posição num | Incrementa o valor atual na posição num.
-    }
+    for (let i = 0; i < numbers.length; i++) {
+        let count = 0;
 
-    for (const num in count) {
-        if (count[num] === 1) {
-            uniqueArray.push(parseInt(num));
+        // Check if this number appears more than once in the array
+        for (let j = 0; j < numbers.length; j++) {
+            if (numbers[i] === numbers[j]) {
+                count++;
+            }
+        }
+        // If this number only appears once in the array, add it to the list of unrepeated values
+        if (count === 1) {
+            unrepeatedValues.push(numbers[i]);
         }
     }
-
-    return uniqueArray;
+    return unrepeatedValues;
 }
+
 
 //13 F
 
