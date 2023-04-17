@@ -144,3 +144,63 @@ export function checkCapicua(num: number): boolean {
     let check = verificarCapicua(num);
     return check;
 }
+
+//ex 13A 
+
+export function smallValueArray(array: number[]): number {
+
+    let small: number = 0;
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] < small) {
+            small = array[i];
+        }
+    }
+    return small;
+}
+
+// ex 13B
+
+export function biggestValueArray(array: number[]): number {
+
+    let big: number = 0;
+    for (let i = 1; i < array.length; i++) {
+        if (array[i] > big) {
+            big = array[i];
+        }
+    }
+    return big;
+}
+
+//13C
+
+export function averageArrayElements(array: number[]): number {
+
+    let count: number = 0;
+    let average: number;
+    let sum: number = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        sum += array[i];
+        count++;
+    }
+    return average = Math.trunc(sum / count)
+}
+//13D
+export function productArrayElements(array: number[]): number {
+
+    let product: number = 1;
+
+    for (let i = 0; i < array.length; i++) {
+        product *= array[i];
+    }
+    return product
+}
+//13 E
+
+
+//13 F
+
+
+
+
+
