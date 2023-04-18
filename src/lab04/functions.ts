@@ -219,13 +219,86 @@ export function uniqueElementsArray(numbers: number[]): number[] {
 
 //13 F
 
-export function inverseArray(array:number[]): number[] {
+export function inverseArray(array: number[]): number[] {
 
-   return array.reverse();
+    return array.reverse();
 }
 
-//13 E 
+//13 g) os elementos primos desse array
 
+export function returnPrimeNumbers(array: number[]): number[] {
+    let primeNumbers: number[] = [];
 
+    for (let i = 0; i < array.length; i++) {
+        let isPrime = true;
+        for (let j = 2; j < i; j++) {
+            if (array[i] % j === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime && array[i] > 1) {
+            primeNumbers.push(array[i]);
+        }
+    }
+    return primeNumbers;
+}
 
+// Exercício 14: Número de Colunas em Matriz (**)
 
+export function numberOfColunsMatrix(matrix: number[][]): number {
+
+    const numColuns = matrix[0].length;
+    for (let i = 1; i < matrix.length; i++) {
+        if (matrix[i].length !== numColuns) {
+            return -1
+        }
+    }
+    return numColuns;
+}
+
+// ex15 Construa uma solução que verifica se uma dada matriz é quadrada.
+
+export function squareMatrix(matrix: number[][]): boolean {
+    const numColuns = matrix[0].length;
+    const numLines = matrix.length;
+    return numColuns === numLines;
+}
+
+// ex16 Construa uma solução que verifica se uma dada matriz é retangular.
+
+export function rectangularMatrix(matrix: number[][]): boolean {
+    const numColuns = matrix[0].length;
+    const numLines = matrix.length;
+    return numColuns !== numLines;
+}
+
+//ex17 a) o elemento de menor valor;
+
+export function smallestValueMatrix(matrix: number[][]): number | undefined {
+
+    let minValue = undefined;
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if (minValue === undefined || matrix[i][j] < minValue) {
+                minValue = matrix[i][j];
+            }
+        }
+    }
+    return minValue;
+}
+
+//ex17 b) o elemento de maior valor;
+
+export function biggestValueMatrix(matrix: number[][]): number | undefined {
+
+    let biggestValue = undefined;
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            if (biggestValue === undefined || matrix[i][j] > biggestValue) {
+                biggestValue = matrix[i][j];
+            }
+        }
+    }
+    return biggestValue;
+}
