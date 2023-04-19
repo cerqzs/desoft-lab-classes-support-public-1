@@ -1,4 +1,4 @@
-import { squareMatrix } from "./functions";
+import { rectangularMatrix } from "./functions";
 
 const nums: number[][] = [
     [1, 3],
@@ -6,6 +6,6 @@ const nums: number[][] = [
     [5, 1]
 ]
 
-let result = squareMatrix(nums);
+let result = rectangularMatrix(nums);
 
 console.log(result);

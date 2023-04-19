@@ -249,8 +249,8 @@ export function returnPrimeNumbers(array: number[]): number[] {
 export function numberOfColunsMatrix(matrix: number[][]): number {
 
     const numColuns = matrix[0].length;
-    for (let i = 1; i < matrix.length; i++) {
-        if (matrix[i].length !== numColuns) {
+    for (let i = 1; i < matrix.length; i++) {  // nr linhas
+        if (matrix[i].length !== numColuns) { // nr colunas
             return -1
         }
     }
