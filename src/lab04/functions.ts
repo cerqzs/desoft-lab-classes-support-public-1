@@ -302,3 +302,22 @@ export function biggestValueMatrix(matrix: number[][]): number | undefined {
     }
     return biggestValue;
 }
+
+// ex 17 c)o valor médio dos elementos;
+
+export function averageValuesMatrix(matrix: number[][]): number {
+    let sum1: number = 0;
+    let count: number = 0;
+    let average: number = 0;
+    for (let i = 0; i < matrix.length; i++) {
+        count++;
+        sum1 += matrix[i].length;
+
+        for (let j = 0; j < matrix[i].length; j++) {
+            count++;
+            sum1 += matrix[j].length
+
+        }
+    }
+    return average = Math.trunc(sum1 / average);
+}
