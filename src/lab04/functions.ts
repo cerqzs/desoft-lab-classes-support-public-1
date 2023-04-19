@@ -198,7 +198,7 @@ export function productArrayElements(array: number[]): number {
 //13 E
 export function uniqueElementsArray(numbers: number[]): number[] {
 
-    const unrepeatedValues = [];
+    const unrepeatedValues: number[] = [];
 
     for (let i = 0; i < numbers.length; i++) {
         let count = 0;
@@ -244,7 +244,7 @@ export function returnPrimeNumbers(array: number[]): number[] {
     return primeNumbers;
 }
 
-// Exercício 14: Número de Colunas em Matriz (**)
+// Exercício 14: Número de Colunas= nr linhas em Matriz (**)
 
 export function numberOfColunsMatrix(matrix: number[][]): number {
 
@@ -290,7 +290,7 @@ export function smallestValueMatrix(matrix: number[][]): number | undefined {
 
 //ex17 b) o elemento de maior valor;
 
-export function biggestValueMatrix(matrix: number[][]): number | undefined {
+export function biggestValueMatrix(matrix: number[][]): number | undefined { // significa que a função smallestValueMatrix pode retornar um valor numérico (number) ou undefined.
 
     let biggestValue = undefined;
     for (let i = 0; i < matrix.length; i++) {
@@ -308,16 +308,58 @@ export function biggestValueMatrix(matrix: number[][]): number | undefined {
 export function averageValuesMatrix(matrix: number[][]): number {
     let sum1: number = 0;
     let count: number = 0;
-    let average: number = 0;
     for (let i = 0; i < matrix.length; i++) {
-        count++;
-        sum1 += matrix[i].length;
-
         for (let j = 0; j < matrix[i].length; j++) {
+            sum1 += matrix[i][j];
             count++;
-            sum1 += matrix[j].length
+        }
+    }
+    if (count === 0) {
+        return -1;
+    }
+    return Math.trunc(sum1 / count);
+}
+
+// 17D o produto dos seus elementos; (***)
+
+
+export function productValuesMatrix(matrix: number[][]): number {
+
+    let product: number = 1;
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix[i].length; j++) {
+            product *= matrix[i][j];
 
         }
     }
-    return average = Math.trunc(sum1 / average);
+    return product;
 }
+
+// 17 e) o conjunto de elementos não repetidos; (***)
+
+export function uniqueElementsInMatrix(matrix: number[][]): number[] {
+    const unrepeatedValues: number[] = [];
+  
+    const elementCount: {[key: number]: number} = {}; // Cria um objeto para armazenar a contagem de cada elemento na matriz
+  
+    for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz e incrementa a contagem de cada elemento
+      for (let j = 0; j < matrix[i].length; j++) {
+        const element = matrix[i][j];
+        if (element in elementCount) { // verifica se o o elemento ja existe no objeto
+          elementCount[element]++; // se sim acrescenta a contagem em 1
+        } else {
+          elementCount[element] = 1;// se nao adiciona o elemento com contagem 1
+        }
+      }
+    }
+    for (let i = 0; i < matrix.length; i++) {  // Itera sobre cada elemento na matriz e adiciona apenas os elementos com contagem 1
+      for (let j = 0; j < matrix[i].length; j++) {
+        const element = matrix[i][j];
+        if (elementCount[element] === 1) {
+          unrepeatedValues.push(element);
+        }
+      }
+    } 
+    return unrepeatedValues;
+  }
