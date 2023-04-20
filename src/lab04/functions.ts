@@ -250,7 +250,7 @@ export function numberOfColunsMatrix(matrix: number[][]): number {
 
     const numColuns = matrix[0].length;
     for (let i = 1; i < matrix.length; i++) {  // nr linhas
-        if (matrix[i].length !== numColuns) { // nr colunas
+        if (matrix.length !== numColuns) { // nr colunas
             return -1
         }
     }
@@ -279,7 +279,7 @@ export function smallestValueMatrix(matrix: number[][]): number | undefined {
 
     let minValue = undefined;
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             if (minValue === undefined || matrix[i][j] < minValue) {
                 minValue = matrix[i][j];
             }
@@ -294,7 +294,7 @@ export function biggestValueMatrix(matrix: number[][]): number | undefined { // 
 
     let biggestValue = undefined;
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             if (biggestValue === undefined || matrix[i][j] > biggestValue) {
                 biggestValue = matrix[i][j];
             }
@@ -309,7 +309,7 @@ export function averageValuesMatrix(matrix: number[][]): number {
     let sum1: number = 0;
     let count: number = 0;
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             sum1 += matrix[i][j];
             count++;
         }
@@ -328,7 +328,7 @@ export function productValuesMatrix(matrix: number[][]): number {
     let product: number = 1;
 
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             product *= matrix[i][j];
 
         }
@@ -344,7 +344,7 @@ export function uniqueElementsInMatrix(matrix: number[][]): number[] {
     const elementCount: { [key: number]: number } = {}; // Cria um objeto para armazenar a contagem de cada elemento na matriz
 
     for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz e incrementa a contagem de cada elemento
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             const element = matrix[i][j];
             if (element in elementCount) { // verifica se o o elemento ja existe no objeto
                 elementCount[element]++; // se sim acrescenta a contagem em 1
@@ -374,7 +374,7 @@ export function primeElementsInMatrix(matrix: number[][]): number[] {
     const elementsInMatrix: { [key: number]: number } = {}; // Cria um objeto para armazenar os elemento da matriz
 
     for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz 
-        for (let j = 0; j < matrix[i].length; j++) {
+        for (let j = 0; j < matrix.length; j++) {
             const element = matrix[i][j];
             let isPrime = true;
             if (element === num) {
@@ -449,4 +449,21 @@ export function identityMatrix(matrix: number[][]): boolean {
         }
     }
     return isIdentity;
+}
+
+//17 k) transposta
+
+export function transposeMatrix(matrix: number[][]): number[][] {
+    let newArray: number[][] = [];
+    for (let i = 0; i < matrix.length; i++) {
+        newArray.push([]);
+    };
+
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
+            newArray[j].push(matrix[i][j]);
+        };
+    };
+
+    return newArray;
 }
