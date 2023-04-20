@@ -450,13 +450,3 @@ export function identityMatrix(matrix: number[][]): boolean {
     }
     return isIdentity;
 }
-
-// 17 a matriz inversa; (***)
-
-
-// 17 k) a matriz transposta. (***)
-
-//export function transposedMatrix(matrix:number [][]): number[][] {
-
-
-//}
