@@ -340,26 +340,123 @@ export function productValuesMatrix(matrix: number[][]): number {
 
 export function uniqueElementsInMatrix(matrix: number[][]): number[] {
     const unrepeatedValues: number[] = [];
-  
-    const elementCount: {[key: number]: number} = {}; // Cria um objeto para armazenar a contagem de cada elemento na matriz
-  
+
+    const elementCount: { [key: number]: number } = {}; // Cria um objeto para armazenar a contagem de cada elemento na matriz
+
     for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz e incrementa a contagem de cada elemento
-      for (let j = 0; j < matrix[i].length; j++) {
-        const element = matrix[i][j];
-        if (element in elementCount) { // verifica se o o elemento ja existe no objeto
-          elementCount[element]++; // se sim acrescenta a contagem em 1
-        } else {
-          elementCount[element] = 1;// se nao adiciona o elemento com contagem 1
+        for (let j = 0; j < matrix[i].length; j++) {
+            const element = matrix[i][j];
+            if (element in elementCount) { // verifica se o o elemento ja existe no objeto
+                elementCount[element]++; // se sim acrescenta a contagem em 1
+            } else {
+                elementCount[element] = 1;// se nao adiciona o elemento com contagem 1
+            }
         }
-      }
     }
     for (let i = 0; i < matrix.length; i++) {  // Itera sobre cada elemento na matriz e adiciona apenas os elementos com contagem 1
-      for (let j = 0; j < matrix[i].length; j++) {
-        const element = matrix[i][j];
-        if (elementCount[element] === 1) {
-          unrepeatedValues.push(element);
+        for (let j = 0; j < matrix[i].length; j++) {
+            const element = matrix[i][j];
+            if (elementCount[element] === 1) {
+                unrepeatedValues.push(element);
+            }
         }
-      }
-    } 
+    }
     return unrepeatedValues;
-  }
+}
+
+// 17 f) os elementos primos dessa matriz;
+
+export function primeElementsInMatrix(matrix: number[][]): number[] {
+
+    const primeNumbers: number[] = [];
+    const num: number = 2;
+
+    const elementsInMatrix: { [key: number]: number } = {}; // Cria um objeto para armazenar os elemento da matriz
+
+    for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz 
+        for (let j = 0; j < matrix[i].length; j++) {
+            const element = matrix[i][j];
+            let isPrime = true;
+            if (element === num) {
+                primeNumbers.push(num);
+            }
+            if (element % num === 0) {
+                isPrime = false;
+                break;
+            }
+            if (isPrime && element > 1) {
+                primeNumbers.push(element);
+            }
+        }
+    }
+    return primeNumbers
+}
+
+// 17 g) a diagonal principal da matriz (apenas caso seja quadrada ou retangular);
+
+export function mainDiagonalInMatrix(matrix: number[][]): number[] {
+
+    const diagonal: number[] = [];
+
+    if (squareMatrix(matrix) === false && rectangularMatrix(matrix) === false) {
+        throw new Error('A matriz tem de ser quadrada ou retangular')
+    }
+    const numLines = matrix.length;
+    const numColumns = matrix[0].length;
+    const minSize = Math.min(numLines, numColumns); //forma de funcionar para matrizes retangulares
+
+    for (let i = 0; i < minSize; i++) {
+        diagonal.push(matrix[i][i]); // numeros que ocupam a mesma posição no index
+    }
+
+    return diagonal;
+}
+
+//17 h) a diagonal secundária da matriz (apenas caso seja quadrada ou retangular);
+
+export function secundaryDiagonalInMatrix(matrix: number[][]): number[] {
+
+    const diagonal: number[] = [];
+
+    if (squareMatrix(matrix) === false && rectangularMatrix(matrix) === false) {
+        throw new Error('A matriz tem de ser quadrada ou retangular')
+    }
+    const numLines = matrix.length;
+    const numColumns = matrix[0].length;
+    const minSize = Math.min(numLines, numColumns); //forma de funcionar para matrizes retangulares
+
+    for (let i = 0; i < minSize; i++) {
+        diagonal.push(matrix[i][numColumns - 1 - i]);
+    }
+
+    return diagonal;
+}
+
+// 17 i) se a mesma corresponde a uma matriz identidade;
+
+export function identityMatrix(matrix: number[][]): boolean {
+
+    if (!squareMatrix(matrix)) {
+        throw new Error("A matriz tem de ser quadrada!");
+    }
+    let isIdentity: boolean = true;
+    let elements = mainDiagonalInMatrix(matrix);
+
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i] !== 1) {
+            isIdentity = false;
+            break;
+        }
+    }
+    return isIdentity;
+}
+
+// 17 a matriz inversa; (***)
+
+
+// 17 k) a matriz transposta. (***)
+
+//export function transposedMatrix(matrix:number [][]): number[][] {
+
+
+//}
