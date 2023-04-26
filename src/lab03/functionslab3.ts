@@ -753,11 +753,6 @@ export function separacaoParesImpares(sequencia: number[]): number[] {
     let numerosPares: number[] = [];
     let numerosImpares: number[] = [];
 
-    for (const i of sequencia) {
-        if (i <= 0 && i > 9 || !Number.isInteger(i)) {
-            throw RangeError('Only takes one digit positive input values')
-        }
-    }
     for (let i = 0; i < sequencia.length; i++) {
         if (sequencia[i] % 2 === 0) {
             numerosPares.push(sequencia[i]);

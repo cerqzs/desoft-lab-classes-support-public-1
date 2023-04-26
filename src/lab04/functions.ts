@@ -149,7 +149,7 @@ export function checkCapicua(num: number): boolean {
 
 export function smallValueArray(array: number[]): number {
 
-    let small: number = 0;
+    let small: number = array[0];
     for (let i = 1; i < array.length; i++) {
         if (array[i] < small) {
             small = array[i];
@@ -162,7 +162,7 @@ export function smallValueArray(array: number[]): number {
 
 export function biggestValueArray(array: number[]): number {
 
-    let big: number = 0;
+    let big: number = array[0];
     for (let i = 1; i < array.length; i++) {
         if (array[i] > big) {
             big = array[i];
@@ -231,7 +231,7 @@ export function returnPrimeNumbers(array: number[]): number[] {
 
     for (let i = 0; i < array.length; i++) {
         let isPrime = true;
-        for (let j = 2; j < i; j++) {
+        for (let j = 2; j < array[i]; j++) {
             if (array[i] % j === 0) {
                 isPrime = false;
                 break;
@@ -328,7 +328,7 @@ export function productValuesMatrix(matrix: number[][]): number {
     let product: number = 1;
 
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix.length; j++) {
+        for (let j = 0; j < matrix[i].length; j++) {
             product *= matrix[i][j];
 
         }
@@ -370,8 +370,6 @@ export function primeElementsInMatrix(matrix: number[][]): number[] {
 
     const primeNumbers: number[] = [];
     const num: number = 2;
-
-    const elementsInMatrix: { [key: number]: number } = {}; // Cria um objeto para armazenar os elemento da matriz
 
     for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz 
         for (let j = 0; j < matrix.length; j++) {
