@@ -465,3 +465,47 @@ export function transposeMatrix(matrix: number[][]): number[][] {
 
     return newArray;
 }
+
+//19 a)calcule o produto de uma matriz por uma constante;
+
+export function matrixProdutByConstant(matrix: number[][], constant: number): number[][] {
+
+    let result: number[][] = []
+    for (let i = 0; i < matrix.length; i++) { // Itera sobre cada elemento da matriz 
+        result.push([]);
+    }
+    for (let i = 0; i < matrix.length; i++) {
+        for (let j = 0; j < matrix.length; j++) {
+            result[i][j] = matrix[i][j] * constant;
+        }
+    }
+    return result;
+}
+
+// 19 b)calcule a soma de duas matrizes de números inteiros;
+
+export function sumTwoMatrixs(matrix: number[][], matrix2: number[][]): number[][] {
+
+    let result: number[][] = []
+    for (let i = 0; i < matrix.length; i++) { // Itera sobre cada linha da matriz 
+        result.push([]);
+        for (let j = 0; j < matrix[i].length; j++) { // Itera sobre cada coluna da linha i da matriz 
+            result[i][j] = matrix[i][j] + matrix2[i][j];
+        }
+    }
+    return result;
+}
+
+// 19 c)calcule o produto de duas matrizes de números inteiros;
+
+export function productTwoMatrixs(matrix: number[][], matrix2: number[][]): number[][] {
+
+    let result: number[][] = []
+    for (let i = 0; i < matrix.length; i++) { // Itera sobre cada linha da matriz 
+        result.push([]);
+        for (let j = 0; j < matrix[i].length; j++) { // Itera sobre cada coluna da linha i da matriz 
+            result[i][j] = matrix[i][j] * matrix2[i][j];
+        }
+    }
+    return result;
+}
