@@ -62,7 +62,7 @@ export class ArrayIntD {
         return averageArrayElements(this.values);
     }
     //j) Retorne a média de todos os números pares. (**)
-    getAveragePairElementsValue(): number {
+    getAverageEvenElementsValue(): number {
         let sum = somaPares(this.values);
         let count = contaPares(this.values);
         return Math.trunc(sum / count);
@@ -79,13 +79,17 @@ export class ArrayIntD {
         let sum: number = 0;
 
         for (let i = 0; i < this.values.length; i++) {
-            if (i % multiple === 0) {
+            if (this.isMultipleOf(i, multiple)) {
                 sum += this.values[i];
                 count++;
             }
         }
         return Math.trunc(sum / count);
     }
+    private isMultipleOf(i: number, multiple: number) {
+        return i % multiple === 0;
+    }
+
     //m) Ordene os valores do array por ordem ascendente. (***)
 
     sortAscendingOrder(): void {
@@ -97,7 +101,118 @@ export class ArrayIntD {
     sortDescendingOrder(): void {
         this.values.sort((b, a) => a - b);
     }
+    //o) Retorne True caso o array esteja vazio e False em caso contrário. (*
+
+    isArrayEmpty(): boolean {
+
+        return this.values.length === 0;
+    }
+
+    //p) Retorne True caso o array contenha apenas um elemento e False em caso contrário. (*)
+
+    arrayHasOneElement(): boolean {
+
+        return this.values.length === 1;
+    }
+
+    //q) Retorne True se o array tiver apenas elementos pares e False em caso contrário. (**)
+
+    arrayOnlyHasEvenElements(): boolean {
+
+        let arrayIsOnlyEven = true;
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.values[i] % 2 != 0) {
+                arrayIsOnlyEven = false;
+                break;
+            }
+        }
+        return arrayIsOnlyEven;
+    }
+
+    // r) Retorne True se o array tiver apenas elementos ímpares e False em caso contrário. (**
+
+    arrayOnlyHasOddElements(): boolean {
+
+        let arrayIsOnlyOdd = true;
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.values[i] % 2 == 0) {
+                arrayIsOnlyOdd = false;
+                break;
+            }
+        }
+        return arrayIsOnlyOdd;
+    }
+
+    // s) Retorne True se o array tiver elementos duplicados e False em caso contrário. (****)
+
+    arrayHasDuplicateElements(): boolean {
+
+        for (let i = 0; i < this.values.length; i++) {
+            for (let j = i + 1; j < this.values.length; j++) {
+                if (this.values[i] === this.values[j]) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    // t) Retorne os elementos do array cujo número de algarismos é superior ao número médio de algarismos de todos os elementos do array. (***)
+
+    countDigits(num: number): number {
+        let count: number = 1;
+        while (num >= 10) {
+            num /= 10;
+            count++;
+        }
+        return count;
+    }
+    filterNumbersByAvgDigits(): number[] {
+
+        let arrayElementsBiggerAvgDigits = [];
+        let totalDigits = 0;
+
+        for (let i = 0; i < this.values.length; i++) {
+            totalDigits += this.countDigits(this.values[i]);
+        }
+        let avgDigits = totalDigits / this.values.length;
+
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.countDigits(this.values[i]) > avgDigits) {
+                arrayElementsBiggerAvgDigits.push(this.values[i]);
+            }
+        }
+        return arrayElementsBiggerAvgDigits;
+    }
+
+    // u) Retorne os elementos do array compostos exclusivamente por algarismos pares. (***)
+
+    isNumberOnlyEvenDigits(num: number): boolean {
+        while (num > 0) {
+            const digit = num % 10;
+            if (digit % 2 !== 0) {
+                return false;
+            }
+            num = Math.trunc(num / 10);
+        }
+        return true;
+    }
+    arrayElementsWithEvenNumbers(): number[] {
+
+        let arrayElementsEvenDigits = []
+
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.isNumberOnlyEvenDigits(this.values[i])) {
+                arrayElementsEvenDigits.push(this.values[i])
+            }
+        }
+        return arrayElementsEvenDigits;
+    }
 }
+
+
+
+
+
 
 
 
