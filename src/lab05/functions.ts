@@ -229,7 +229,7 @@ export class ArrayIntD {
         let sequenceIsAscending = true;
         for (let j = 1; j < digits.length; j++) {
             if (digits[j] <= digits[j - 1]) {
-                sequenceIsAscending = false;;
+                sequenceIsAscending = false;
             }
         }
         return sequenceIsAscending;
