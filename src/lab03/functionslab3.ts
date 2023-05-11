@@ -502,7 +502,6 @@ export function numeroInteiroInvertido(numero: number): number {
 
 // ex09A
 
-
 export function verificarCapicua(numero: number): boolean {
 
     const numeroInvertido = numeroInteiroInvertido(numero);

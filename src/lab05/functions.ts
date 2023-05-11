@@ -1,5 +1,5 @@
-import { contaImpares, contaPares, somaImpares, somaPares } from "../lab03/functionslab3";
-import { averageArrayElements, biggestValueArray, multiplesInInterval, smallValueArray } from "../lab04/functions";
+import { contaImpares, contaPares, somaImpares, somaPares, verificarArmStrong } from "../lab03/functionslab3";
+import { averageArrayElements, biggestValueArray, checkCapicua, multiplesInInterval, smallValueArray } from "../lab04/functions";
 
 
 // 1 a) Construtor público em que o array encapsulado fica vazio (i.e. sem valores). (*)
@@ -207,12 +207,99 @@ export class ArrayIntD {
         }
         return arrayElementsEvenDigits;
     }
+
+    // v) Retorne os elementos que são sequências crescentes (e.g. 347) do array. (**)
+
+    convertNumberIntoDigitSequence(num: number): number[] {
+
+        const digits: number[] = [];
+        let n: number = num;
+        // Converter o número em uma sequência de dígitos
+        while (n > 0) {
+            const d: number = n % 10;
+            digits.unshift(d);
+            n = Math.floor(n / 10);
+        }
+        return digits;
+    }
+
+    arrayElementsAscendingNumbersSequence(num: number): boolean {
+
+        let digits = this.convertNumberIntoDigitSequence(num);
+        for (let j = 1; j < digits.length; j++) {
+            if (digits[j] <= digits[j - 1]) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    elementsWithAscendingSequence(): number[] {
+        let elements: number[] = [];
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.arrayElementsAscendingNumbersSequence(this.values[i])) {
+                elements.push(this.values[i]);
+            }
+        }
+        return elements;
+    }
+
+    //w) Retorne as capicuas existentes no array. (**)
+
+    checkPalindromicElements(): number[] {
+
+        let palindromicElements: number[] = [];
+
+        for (let i = 0; i < this.values.length; i++) {
+            if (checkCapicua(this.values[i])) {
+                palindromicElements.push(this.values[i]);
+            }
+        }
+        return palindromicElements;
+    }
+
+    // x) Retorne os números existentes no array compostos exclusivamente por um mesmo algarismo (e.g., 222). (**)
+
+    checkNumberIsSingleDigit(num: number): boolean {
+
+        let isSingleDigit = true;
+        const firstDigit = num % 10; // obter o primeiro dígito
+        while (num > 0) {
+            const digit = num % 10; // obter o próximo dígito
+            if (digit !== firstDigit) {
+                isSingleDigit = false;;
+            }
+            num = Math.floor(num / 10); // remover o último dígito
+        }
+        return isSingleDigit;
+    }
+    checkNumberIsSingleDigitAlternative(num: number): boolean {
+        const digits = this.convertNumberIntoDigitSequence(num);
+        return digits.every(d => d === digits[0]);
+    }
+
+    arrayElementsWithSingleDigit(): number[] {
+        let singleDigitElements: number[] = []
+
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.checkNumberIsSingleDigit(this.values[i])) {
+                singleDigitElements.push(this.values[i])
+            }
+        }
+        return singleDigitElements;
+    }
+    // y) Retorne os números existentes no array que não são de Amstrong. (**)
+    arrayArmstrongElements(): number[] {
+    
+        let armstrongElements: number[] = [];
+
+        for (let i = 0; i < this.values.length; i++) {
+            if (!verificarArmStrong(this.values[i])) {
+                armstrongElements.push(this.values[i])
+            }
+        }
+        return armstrongElements
+    }
 }
-
-
-
-
-
-
 
 
