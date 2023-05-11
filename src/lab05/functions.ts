@@ -226,12 +226,13 @@ export class ArrayIntD {
     arrayElementsAscendingNumbersSequence(num: number): boolean {
 
         let digits = this.convertNumberIntoDigitSequence(num);
+        let sequenceIsAscending = true;
         for (let j = 1; j < digits.length; j++) {
             if (digits[j] <= digits[j - 1]) {
-                return false;
+                sequenceIsAscending = false;;
             }
         }
-        return true;
+        return sequenceIsAscending;
     }
 
     elementsWithAscendingSequence(): number[] {
@@ -290,7 +291,7 @@ export class ArrayIntD {
     }
     // y) Retorne os números existentes no array que não são de Amstrong. (**)
     arrayArmstrongElements(): number[] {
-    
+
         let armstrongElements: number[] = [];
 
         for (let i = 0; i < this.values.length; i++) {
