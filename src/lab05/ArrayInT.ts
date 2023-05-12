@@ -27,8 +27,10 @@ export class ArrayIntD {
     // functions
 
     //c) Adicione um novo elemento (valor) ao array encapsulado. (*)
-    addValue(value: number): void {
+    addValue(value: number): number[] {
         this.values.push(value);
+
+        return this.values;
     }
 
     // d) Retire o primeiro elemento do array encapsulado com um determinado valor. (*
@@ -147,14 +149,15 @@ export class ArrayIntD {
 
     arrayHasDuplicateElements(): boolean {
 
+        let arrayHasDoubles = false;
         for (let i = 0; i < this.values.length; i++) {
             for (let j = i + 1; j < this.values.length; j++) {
                 if (this.values[i] === this.values[j]) {
-                    return true;
+                    arrayHasDoubles = true;
                 }
             }
         }
-        return false;
+        return arrayHasDoubles;
     }
     // t) Retorne os elementos do array cujo número de algarismos é superior ao número médio de algarismos de todos os elementos do array. (***)
 
@@ -222,7 +225,6 @@ export class ArrayIntD {
         }
         return digits;
     }
-
     arrayElementsAscendingNumbersSequence(num: number): boolean {
 
         let digits = this.convertNumberIntoDigitSequence(num);
@@ -234,7 +236,6 @@ export class ArrayIntD {
         }
         return sequenceIsAscending;
     }
-
     elementsWithAscendingSequence(): number[] {
         let elements: number[] = [];
         for (let i = 0; i < this.values.length; i++) {
@@ -301,6 +302,40 @@ export class ArrayIntD {
         }
         return armstrongElements
     }
+
+    //z) Retorne os elementos que contêm uma sequência crescente de pelo menos n algarismos (e.g., n=3, 347). (***)
+
+    arrayElementsAscendingNumbersSequenceCount(num: number): number {
+
+        let digits = this.convertNumberIntoDigitSequence(num);
+        let count: number = 1;
+        for (let j = 1; j < digits.length; j++) {
+            if (digits[j] > digits[j - 1]) {
+                count++;
+            }
+        }
+        return count;
+    }
+    arrayNumbersWtihNAscendingSequence(sequenceNumber: number): number[] {
+        let ascendingElements: number[] = this.elementsWithAscendingSequence();
+        let ascendingElementsNSequence: number[] = [];
+        for (let i = 0; i < ascendingElements.length; i++) {
+            if (this.arrayElementsAscendingNumbersSequenceCount(ascendingElements[i]) == sequenceNumber) {
+                ascendingElementsNSequence.push(ascendingElements[i])
+            }
+        }
+        return ascendingElementsNSequence
+    }
+    //aa) Retorne True ou False, consoante o array é igual a um array passado por parâmetro. (**)
+
+    isArrayEqual(array: number[]): boolean {
+
+        let arraysAreEqual = true;
+        for (let i = 0; i < this.values.length; i++) {
+            if (this.values.length != array.length && this.values[i] != array[i]) {
+                arraysAreEqual = false;
+            }
+        }
+        return arraysAreEqual  //  return this.values.length === array.length && this.values.every((value, index) => value === array[index]);
+    }
 }
-
-

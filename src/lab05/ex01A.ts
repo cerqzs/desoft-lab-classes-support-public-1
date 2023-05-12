@@ -1,4 +1,4 @@
-import { ArrayIntA } from "./functions";
+import { ArrayIntA } from "./ArrayInT";
 
 const arrayA = new ArrayIntA();
 
