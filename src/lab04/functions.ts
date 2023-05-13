@@ -294,7 +294,7 @@ export function biggestValueMatrix(matrix: number[][]): number | undefined { // 
 
     let biggestValue = undefined;
     for (let i = 0; i < matrix.length; i++) {
-        for (let j = 0; j < matrix.length; j++) {
+        for (let j = 0; j < matrix[i].length; j++) {
             if (biggestValue === undefined || matrix[i][j] > biggestValue) {
                 biggestValue = matrix[i][j];
             }
