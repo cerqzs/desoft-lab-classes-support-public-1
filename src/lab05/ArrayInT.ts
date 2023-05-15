@@ -34,11 +34,9 @@ export class ArrayIntD {
     }
 
     // d) Retire o primeiro elemento do array encapsulado com um determinado valor. (*
-    removeValue(value: number): void {
-        const index = this.values.indexOf(value);
-        if (index !== -1) {
-            this.values.splice(index, 1);  // index | nr elementos a remover
-        }
+    removeValue(): number | undefined {
+        let removedValue = this.values.shift();
+        return removedValue;
     }
     // e) Retorne o valor de um determinado elemento indicado pela sua posição. (*)
     getValueAtIndex(index: number): number {
